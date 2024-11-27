@@ -8,6 +8,7 @@
 
 So we're going into the 42 main subject PDF, and everytime we find a keyword or any word that we don't face everyday we gonna take our time to understand it then going to the next part until we finish the whole project ✅
 
+<br>
 
 # <u>Let's start !</u>
 

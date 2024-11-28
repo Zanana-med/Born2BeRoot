@@ -24,9 +24,7 @@ The `Machine`here refer to the **Virtual machine** exactly. Let's understand wha
 
 ## **Virtual Machine**
 
-
 So basically you can see a VM as a computer inside your computer.
-
 
 Imagine you have a computer with Windows operating system, one day you decide to start learning Linux! But you still wanna use your main computer which full of your personal data and softwares you use everyday .  
 
@@ -41,10 +39,30 @@ A Virtual Machine allows you to run an **entire** operating system inside your c
 
 ![VM](https://i.ibb.co/Kj5z1n6/image.png)
 
-#### **Host & Guest**  
+### **Host & Guest**  
 
 + The **HOST** is the operating system with the physical connection with your hardware (in our example its your Windows which contain your files, data, software, etc.)    
 + The **Guest** is the new operating system you run inside the virtual machine (In our example its the Linux so you can practice your knowledge).
 
 The guest also use the resources of the computer (CPU, RAM, Storage, etc.), not directly of course! but with the help of the **Hypervisor**.  
+
+### **Hypervisor**
+
+The hypervisor is just a software installed in your host OS, its job to create computers inside your computer (VirtualBox for example).  
+
+The hypervisor create for every new OS all the resources it needs so the new VM thinks that's it is actually a computer.
+
+<p align = "center">
+	<img src = "https://i.ibb.co/hRRf3Fz/Hardwar-1.png" width = "550">
+</p>
+
+The Hypervisor manage and allocate the portions of all the resources needed so that every OS think its inside a real computer.
+
++ **Virtual CPU :** The hypervisor allocate certain number of vCPU (Virtual CPU) to the virtual machine, which are abstracted from the physical CPU.
+
++ **Virtual Ram :** When configuring a VM, you choose how much the hypervisor allocate of the physical memory to the guest OS from the host RAM, ensuring it wouldn't access the other host memory.
+
++ **Virtual storage :** Hypervisor provide the number you want of GB as the guest hard disk from the host hard one, it create a large file on the host storage, this file act like its the Virtual storage of the guest OS.  (  `.vdi` file on VirtualBox).
+
++ **Virtualizing other resources :** the hypervisor also provide the other virtual resources as Gpu, Network adapter, Usb devices ... 
 

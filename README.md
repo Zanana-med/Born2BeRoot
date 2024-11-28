@@ -66,3 +66,12 @@ The Hypervisor manage and allocate the portions of all the resources needed so t
 
 + **Virtualizing other resources :** the hypervisor also provide the other virtual resources as Gpu, Network adapter, Usb devices ... 
 
+#### Types of Hypervisor :
+
+1. **Type 1 :** ( Bare Metal Hypervisor) This type don't need an interaction with a host operating system, requires setup knowledge. It take all the resources it needs directly from the physical hardware, it is used mostly by the companies, servers, cloud computing ...  And not for personal uses or testing a new OS.
+
+2. **Type 2 :** ( Hosted Hypervisor ) This type of hypervisor is the one we gonna use on our project, it is easy to set up and great for personal uses or testing, it runs on top of a host OS as an application.
+
+<p align = "center">
+	<img  src = "https://i.ibb.co/R90SPtL/Untitled-design-1-1.png" width = "600">
+</p>

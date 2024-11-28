@@ -66,7 +66,7 @@ The Hypervisor manage and allocate the portions of all the resources needed so t
 
 + **Virtualizing other resources :** the hypervisor also provide the other virtual resources as Gpu, Network adapter, Usb devices ... 
 
-#### Types of Hypervisor :
+### Types of Hypervisor :
 
 1. **Type 1 :** ( Bare Metal Hypervisor) This type don't need an interaction with a host operating system, requires setup knowledge. It take all the resources it needs directly from the physical hardware, it is used mostly by the companies, servers, cloud computing ...  And not for personal uses or testing a new OS.
 
@@ -75,3 +75,15 @@ The Hypervisor manage and allocate the portions of all the resources needed so t
 <p align = "center">
 	<img  src = "https://i.ibb.co/R90SPtL/Untitled-design-1-1.png" width = "600">
 </p>
+
+## **Operating System / Debian** 
+
+![Os & Debian](https://i.ibb.co/ZY1Qdmx/image.png)
+
+### Operating System
+
+The operating system is a software developed using programming languages like C, C++ or Assembly. It act like intermediary between the user and the computer's hardware, manage the hardware resources as CPU, RAM, Storage, Peripheral ( keyboards, mouses, usb's etc. ),  run applications and provide user interface for the interaction.
+
+The operating system interact directly with the hardware with the help of its kernel and device drivers.
+
+**Kernel :** Is the core part of the operating system that interact with the hardware, it acts as a bridge between the hardware and the rest of the operating system  

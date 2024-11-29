@@ -1,5 +1,4 @@
 <h1 align = "center">Born2BeRoot</h1>
-
 <p align = "center">
 		<img src = "https://i.ibb.co/jh9jq5f/image.png"  width = "250">
 </p>
@@ -12,7 +11,6 @@ You wanna pass the 42 Born2BeRoot Project **DO YOU ??**
 So we're going into the main PDF subject, and everytime we find a keyword or any scary word that we don't face everyday ! We gonna take our time to understand it and know how to work with it. Part per Part of the PDF until we finish the whole project ✅
 
 <br>
-
 # <u>Let's start !</u>
 
 ![introduction](https://i.ibb.co/K0sDzJQ/image.png)
@@ -22,7 +20,7 @@ So we're going into the main PDF subject, and everytime we find a keyword or any
 
 The `Machine`here refer to the **Virtual machine** exactly. Let's understand what is it, and why you should use one also ! ...
 
-## **Virtual Machine**
+# **Virtual Machine**
 
 So basically you can see a VM as a computer inside your computer.
 
@@ -46,7 +44,7 @@ A Virtual Machine allows you to run an **entire** operating system inside your c
 
 The guest also use the resources of the computer (CPU, RAM, Storage, etc.), not directly of course! but with the help of the **Hypervisor**.  
 
-## **Hypervisor**
+# **Hypervisor**
 
 The hypervisor is just a software installed in your host OS, its job to create computers inside your computer (VirtualBox for example).  
 
@@ -76,7 +74,7 @@ The Hypervisor manage and allocate the portions of all the resources needed so t
 	<img  src = "https://i.ibb.co/R90SPtL/Untitled-design-1-1.png" width = "600">
 </p>
 
-## **Operating System, Linux, Debian and Rocky**
+# **Operating System, Linux, Debian and Rocky**
 
 ![Os & Debian](https://i.ibb.co/ZY1Qdmx/image.png)
 
@@ -88,9 +86,9 @@ The operating system interact directly with the hardware with the help of its ke
 
 **Kernel :** The core part of the operating system that interact directly with the hardware, acts as a bridge between the hardware and the rest of the operating system, enabling communication between the software and the hardware.  
 
->**How to communicate with the kernel ? **
+>**How to communicate with the kernel ?**
 
-<u>System calls :</u> are the primary interface between the user programs and the kernel, allow user applications to request services from the operating system such file access, process control or communication ... 
+<u><b>System calls</b></u> : Are the primary interface between the user programs and the kernel, allow user applications to request services from the operating system such file access, process control or communication ... 
 
 <p align = "center">
 	<img src ="https://i.ibb.co/DVdJDbN/User-space-2.png" width = "450">
@@ -113,6 +111,10 @@ Linux is the kernel, the core of the operating system, the entire OS is named GN
 
 Before we dive into the Debian, Rocky and the difference between them, we need to understand those two concepts :
 
-1. **Linux distribution** : A complete operating system built around Linux kernel with additional software like system libraries, utilities and package management tools, from groups and individual developers for specific purposes.  
+#### Linux distribution : 
+ 
+Linux distribution is a complete operating system built around Linux kernel with additional software like system libraries, utilities and package management tools, created from groups and individual developers for specific purposes.  
 
-2. **Package manager** : Command-line or graphical tool to automate the process of installing, updating and removing software packages on Linux system, don't be scared by the word **package** you can see it as a normal software you wanna install, to install our package we need a package manager 
+#### Package manager : 
+
+Command-line or graphical tool to automate the process of installing, updating and removing software packages on Linux system, don't be scared by the word **package** you can see it as a normal software you wanna install, to install our package we need a package manager 

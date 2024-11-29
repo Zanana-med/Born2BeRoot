@@ -107,14 +107,13 @@ Linux is the kernel, the core of the operating system, the entire OS is named GN
 	<img src = "https://i.ibb.co/3SGWjhB/9bygum.jpg" width = "250">
 </p>
 
-### > Debian vs Rocky
 
-Before we dive into the Debian, Rocky and the difference between them, we need to understand those two concepts :
+Before diving into the Debian, Rocky and the difference between them, we need to understand those two concepts :
 
-#### Linux distribution : 
+### > Linux distribution : 
  
 Linux distribution is a complete operating system built around Linux kernel with additional software like system libraries, utilities and package management tools, created from groups and individual developers for specific purposes.  
 
-#### Package manager : 
+### > Package manager : 
 
 Command-line or graphical tool to automate the process of installing, updating and removing software packages on Linux system, don't be scared by the word **package** you can see it as a normal software you wanna install, to install our package we need a package manager 

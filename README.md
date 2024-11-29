@@ -6,19 +6,20 @@
 ## How this article gonna help !
 
 
->**We are not here only for the configuration of the virtual machine, if you want that don't continue this masterpiece article which full of knowledge, go watch a 10 min YouTube video  and stay like an illiterate**  
+>**WE ARE NOT HERE ONLY FOR THE CONFIGURATION OF THE VIRTUAL MACHINE, IF YOU WANT THAT DON'T CONTINUE THIS MASTERPIECE ARTICLE WHICH FULL OF KNOWLEDGE AND INFORMATION, GO WATCH A 10 MIN YOUTUBE VIDEO AND STAY LIKE AN ILLITERATE** 
 
 You wanna pass the 42 Born2BeRoot Project **DO YOU ??** 
 
 So we're going into the main PDF subject, and everytime we find a keyword or any scary word that we don't face everyday ! We gonna take our time to understand it and know how to work with it. Part per Part of the PDF until we finish the whole project ✅
 
 <br>
+
 # <u>Let's start !</u>
 
 ![introduction](https://i.ibb.co/K0sDzJQ/image.png)
 
 
->Machine ?????
+**Machine ?????**
 
 The `Machine`here refer to the **Virtual machine** exactly. Let's understand what is it, and why you should use one also ! ...
 
@@ -120,7 +121,7 @@ Linux distribution is a complete operating system built around Linux kernel with
 
 Command-line or graphical tool to automate the process of installing, updating and removing software packages on Linux system, don't be scared by the word **package** you can see it as a normal software you wanna install, to install our package we need a package manager.
 
->On the APT part on our PDF we gonna give more time to explain the package manager and how it works.
+>On the next chapter we gonna give more time to APT and explain the package manager and how it works .
 
 
 ### > Debian and Rocky
@@ -140,3 +141,19 @@ I think we already answer that from explaining each one of  them, Rocky is for t
 ![apt](https://i.ibb.co/Rcmh9mV/image.png)
 
 
+### > Package Manager
+
+We talk earlier about the package manager, now its the time to go deeper.
+
+As we say that the package manager help us to install, upgrade and remove packages which are software .
+
+`dpkg` is one of the package managers, but i don't recommend it for you, because you're going to face a lot of problems, first you need to download the `.deb` file of the package you wanna install, but the big problem is when you face the  **dependency** problem. 
+
+**What is dependency ???**
+
+When installing a package it depends to other packages, using **dpkg** you need to install them manually if they not exist on your system. Instead there is other package managers that install the dependencies automatically like **APT** the powerful package manager.
+
+![dependency Problem](https://i.ibb.co/fqkQ22f/2-dependency-error-teamview-2.png)
+
+
+### > APT and Aptitude

@@ -6,6 +6,8 @@
 ## How this article gonna help !
 
 
+>**We are not here only for the configuration of the virtual machine, if you want that don't continue this masterpiece article which full of knowledge, go watch a 10 min YouTube video  and stay like an illiterate**  
+
 You wanna pass the 42 Born2BeRoot Project **DO YOU ??** 
 
 So we're going into the main PDF subject, and everytime we find a keyword or any scary word that we don't face everyday ! We gonna take our time to understand it and know how to work with it. Part per Part of the PDF until we finish the whole project ✅
@@ -97,7 +99,7 @@ The operating system interact directly with the hardware with the help of its ke
 
 ### > Linux is not what you think it is !!!!!
 
-You think that Linux is an entire operating system where you run commands like `ls`, `cp`, `cat`, etc. Including shell command-lines and libraries such glibc for running prorams.
+You think that Linux is an entire operating system where you run commands like `ls`, `cp`, `cat`, etc. Including shell command-lines and libraries such glibc for running programs.
 
 But you're completely wrong my friend! Because here you are talking about the GNU not the Linux.
 
@@ -110,10 +112,31 @@ Linux is the kernel, the core of the operating system, the entire OS is named GN
 
 Before diving into the Debian, Rocky and the difference between them, we need to understand those two concepts :
 
-### > Linux distribution : 
+1. **Linux distribution :**
  
 Linux distribution is a complete operating system built around Linux kernel with additional software like system libraries, utilities and package management tools, created from groups and individual developers for specific purposes.  
 
-### > Package manager : 
+2. **Package manager :** 
 
-Command-line or graphical tool to automate the process of installing, updating and removing software packages on Linux system, don't be scared by the word **package** you can see it as a normal software you wanna install, to install our package we need a package manager 
+Command-line or graphical tool to automate the process of installing, updating and removing software packages on Linux system, don't be scared by the word **package** you can see it as a normal software you wanna install, to install our package we need a package manager.
+
+>On the APT part on our PDF we gonna give more time to explain the package manager and how it works.
+
+
+### > Debian and Rocky
+
++ **Debian** is a Linux distribution composed of **free** and open-source packages, comes with clean user interface not like the Windows OS fooled of news and ads, its update are well tested before releasing. The Debian distributions focus more on the stability, security and privacy of the user, also comes with the powerful package manager APT which help a lot for installing, upgrading or removing software on the system.
+
++ **Rocky** is based on Red Hat Enterprise Linux (RHEL), which is a Linux distribution for the commercial market developed by the Red Hat, Rocky focus on enterprise-grade software. Good for servers, enterprise environment, cloud computing ... Not for a beginner with the Linux operating system.
+
+#### Why Debian ?
+
+I think we already answer that from explaining each one of  them, Rocky is for the enterprises and companies not for someone new to learn system administration and basic Linux concepts, also Debian has more packages.
+
+
+# APT, Aptitude and AppArmor
+
+
+![apt](https://i.ibb.co/Rcmh9mV/image.png)
+
+

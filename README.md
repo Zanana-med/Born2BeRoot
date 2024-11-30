@@ -145,15 +145,27 @@ I think we already answer that from explaining each one of  them, Rocky is for t
 
 We talk earlier about the package manager, now its the time to go deeper.
 
-As we say that the package manager help us to install, upgrade and remove packages which are software .
+As we say that the package manager can be a command-line or a graphical tool help us to install, upgrade and remove packages which are software .
 
-`dpkg` is one of the package managers, but i don't recommend it for you, because you're going to face a lot of problems, first you need to download the `.deb` file of the package you wanna install, but the big problem is when you face the  **dependency** problem. 
+`dpkg` is one of the package managers, but i don't recommend it for you, because you're going to face a lot of problems, first you need to find and download the `.deb` file of the package you wanna install, but the big problem is when you face the  **dependency** problem. 
 
 **What is dependency ???**
 
-When installing a package it depends to other packages, using **dpkg** you need to install them manually if they not exist on your system. Instead there is other package managers that install the dependencies automatically like **APT** the powerful package manager.
+When installing a package it depends to other packages to work, using **dpkg** you need to install them manually if they not exist on your system. Instead! there is other package managers that install the dependencies automatically like **APT** the powerful package manager.
 
 ![dependency Problem](https://i.ibb.co/fqkQ22f/2-dependency-error-teamview-2.png)
 
 
 ### > APT and Aptitude
+
+**APT** stand for Advanced Package Tool, a powerful package manager used by Debian-based Linux Distributions ( Ubuntu, Linux Mint, etc.). It simplifies the process to manage packages by automating tasks as resolving the dependencies and downloading packages from repositories.
+
+The APT automatically install or update all the dependencies needed to install a package.
+
+**Apt and Apt-Get :** The both apt and apt-get access the same back-end resources, we're talking about the same repositories for downloading and managing software packages.
+Apt is newer than Apt-Get, also the Apt is user-friendly interface and provide cleaner output and progress bars for a better user experience.
+
+<p align = "center">
+	<img src = "https://i.ibb.co/zZTPzPF/Linux-Users-960-x-1100-px-1.png" width = "350">
+</p>
+

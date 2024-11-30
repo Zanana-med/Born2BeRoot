@@ -163,7 +163,7 @@ When installing a package it depends to other packages to work, using **dpkg** y
 Unlike `dpkg` you don't need to install the `.deb` file, just use the apt command plus the name of the software you wanna install. THAT'S IT !
 
 
-example : `apt install brave`
+example : `apt install firefox`
 
 
 The APT automatically install and update all the dependencies needed to install a package.
@@ -172,14 +172,14 @@ The APT automatically install and update all the dependencies needed to install 
 Apt is newer than Apt-Get, also the Apt is user-friendly interface and provide cleaner output and progress bars for a better user experience.
 
 <p align = "center">
-	<img src = "https://i.ibb.co/M9SKQcc/Linux-Users-960-x-1100-px-2-1-1.png" width = "350">
+	<img src = "https://i.ibb.co/3SrxBfs/Linux-Users-960-x-1100-px-960-x-1000-px-1-1.png" width = "350">
 </p>
 
 **How APT works ?**
 
 Apt relied on a list of repositories which are storage location or someone's server with collection of software, we can check those repositories using the command `/etc/apt/sources.list` and for additional files in `/etc/apt/sources.list.d/`.
 
-When requesting a package \` `apt install brave`  \`  the Apt checks which dependencies are needed to install the package and ensuring installing them if they not exist, then tha Apt download the `.deb` package file from the repository specified in `source.list`.
+When requesting a package \` `apt install firefox` \`  the Apt checks which dependencies are needed to install the package and ensuring installing them if they not exist, then tha Apt download the `.deb` package file from the repository specified in `source.list`.
 
 
 **Update Package Metadata**

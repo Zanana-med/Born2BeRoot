@@ -6,7 +6,7 @@
 ## How this article gonna help !
 
 
->**WE ARE NOT HERE ONLY FOR THE CONFIGURATION OF THE VIRTUAL MACHINE, IF YOU WANT THAT DON'T CONTINUE THIS MASTERPIECE ARTICLE WHICH FULL OF KNOWLEDGE AND INFORMATION, GO WATCH A 10 MIN YOUTUBE VIDEO AND STAY LIKE AN ILLITERATE** 
+>**WE ARE NOT HERE ONLY FOR THE CONFIGURATION OF THE VIRTUAL MACHINE, IF THAT'S WHAT YOU WANT DON'T CONTINUE THIS MASTERPIECE ARTICLE WHICH FULL OF KNOWLEDGE AND INFORMATION, GO WATCH A 10 MIN YOUTUBE VIDEO AND STAY LIKE AN ILLITERATE** 
 
 You wanna pass the 42 Born2BeRoot Project **DO YOU ??** 
 
@@ -158,14 +158,32 @@ When installing a package it depends to other packages to work, using **dpkg** y
 
 ### > APT and Aptitude
 
-**APT** stand for Advanced Package Tool, a powerful package manager used by Debian-based Linux Distributions ( Ubuntu, Linux Mint, etc.). It simplifies the process to manage packages by automating tasks as resolving the dependencies and downloading packages from repositories.
+**APT** stand for Advanced Package Tool, a powerful package manager used by Debian-based Linux Distributions ( Ubuntu, Linux Mint, etc.). It simplifies the process to manage packages by automating tasks as resolving the dependencies and downloading packages from repositories.  
 
-The APT automatically install or update all the dependencies needed to install a package.
+Unlike `dpkg` you don't need to install the `.deb` file, just use the apt command plus the name of the software you wanna install. THAT'S IT !
+
+
+example : `apt install brave`
+
+
+The APT automatically install and update all the dependencies needed to install a package.
 
 **Apt and Apt-Get :** The both apt and apt-get access the same back-end resources, we're talking about the same repositories for downloading and managing software packages.
 Apt is newer than Apt-Get, also the Apt is user-friendly interface and provide cleaner output and progress bars for a better user experience.
 
 <p align = "center">
-	<img src = "https://i.ibb.co/zZTPzPF/Linux-Users-960-x-1100-px-1.png" width = "350">
+	<img src = "https://i.ibb.co/M9SKQcc/Linux-Users-960-x-1100-px-2-1-1.png" width = "350">
 </p>
+
+**How APT works ?**
+
+Apt relied on a list of repositories which are storage location or someone's server with collection of software, we can check those repositories using the command `/etc/apt/sources.list` and for additional files in `/etc/apt/sources.list.d/`.
+
+When requesting a package \` `apt install brave`  \`  the Apt checks which dependencies are needed to install the package and ensuring installing them if they not exist, then tha Apt download the `.deb` package file from the repository specified in `source.list`.
+
+
+**Update Package Metadata**
+
+When you run : `sudo apt update` the Apt downloads the latest updates of the packages from the repositories as versions, dependencies and descriptions and store this data locally on `/var/lib/apt/lists/` for faster lookups.  
+
 

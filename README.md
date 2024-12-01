@@ -206,3 +206,5 @@ For example :
 
 
 ### > AppArmor
+
+AppArmor is a Linux Kernel security module restrict the resources that the program or application can access, 

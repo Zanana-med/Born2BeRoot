@@ -156,9 +156,9 @@ When installing a package it depends to other packages to work, using **dpkg** y
 ![dependency Problem](https://i.ibb.co/fqkQ22f/2-dependency-error-teamview-2.png)
 
 
-### > APT and Aptitude
+### > APT
 
-**APT** stand for Advanced Package Tool, a powerful package manager used by Debian-based Linux Distributions ( Ubuntu, Linux Mint, etc.). It simplifies the process to manage packages by automating tasks as resolving the dependencies and downloading packages from repositories.  
+**APT** stand for Advanced Package Tool, released on 2014, a powerful package manager used by Debian-based Linux Distributions ( Ubuntu, Linux Mint, etc.). It simplifies the process to manage packages by automating tasks as resolving the dependencies and downloading packages from repositories.  
 
 Unlike `dpkg` you don't need to install the `.deb` file, just use the apt command plus the name of the software you wanna install. THAT'S IT !
 
@@ -187,3 +187,21 @@ When requesting a package \` `apt install firefox` \`  the Apt checks which depe
 When you run : `sudo apt update` the Apt downloads the latest updates of the packages from the repositories as versions, dependencies and descriptions and store this data locally on `/var/lib/apt/lists/` for faster lookups.  
 
 
+### > Aptitude
+
+The aptitude is a package manager older than the APT, it was released on 1999. It offers additionally of the command-line interface a **full-screen text-based graphical interface**,  making it more user friendly, also it shares the same back-end resources as APT.
+
+![Aptitude](https://i.ibb.co/DttnPPK/image.png)
+
+
+
+**So why APT created?**
+
+`apt` and `aptitude` are **complementary**, not competitors. The APT was not created to kill the Aptitude or something like that, the APT focus on modernization, before APT the package management required using multiple tools like `apt-get` , `apt-cache` , `dpkg` , etc. The APT merge all those functionalities into a single. 
+
+For example :  
++ Old way : `apt-get install`, `apt-cache search`.
++ New way : `apt install`, `apt search`.  
+
+
+### > AppArmor

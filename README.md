@@ -191,7 +191,7 @@ When you run : `sudo apt update` the Apt downloads the latest updates of the pac
 
 The aptitude is a package manager older than the APT, it was released on 1999. It offers additionally of the command-line interface a **full-screen text-based graphical interface**,  making it more user friendly, also it shares the same back-end resources as APT.
 
-(Picture of the Aptitude graphical Interface)
+(Snapshot of the Aptitude graphical Interface)
 ![Aptitude](https://i.ibb.co/DttnPPK/image.png)
 
 

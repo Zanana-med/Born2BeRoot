@@ -230,6 +230,5 @@ AppArmor can use two modes to handle profiles :
 + **Complain mode** : The profile is active but the AppArmor just logs violations without blocking them, this mode is good while testing a profile. The logs are on the default Linux logs path `/var/log/syslog` . To set ---> `sudo aa-complain /etc/apparmor.d/usr.bin.firefox`
 
 **Loading a Profile :** When creating or updating a profile we need to load this file to AppArmor so when enforcing it the system knows what to enforce.
-
 The command is  ---> `sudo apparmor_parser -r /etc/apparmor.d/usr.bin.firefox` 
 

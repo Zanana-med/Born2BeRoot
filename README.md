@@ -207,4 +207,13 @@ For example :
 
 ### > AppArmor
 
-AppArmor is a Linux Kernel security module restrict the resources that the program or application can access, 
+AppArmor is a Linux Kernel security module restrict the resources that the program or application can access, enhancing the system's overall security.
+
+**Example :**  Web-Browser don't need to access system files like `/etc/passwd` or your private data as photos. AppArmor restrict the browser to access those directories and files, so even if the program is hacked, the hacked will not have the access to sensitive data.
+
+The AppArmor uses set of rules called **profiles**, which is a configuration file that contain :
++ what files a program can access to;
++ what system resources can be used (Webcam as example, etc.);
++ what types of actions a program can take (connect to internet but not run other programs).
+
+Automatically when you run a program the AppArmor checks if there is a profile applied for it, 

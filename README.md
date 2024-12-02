@@ -209,11 +209,27 @@ For example :
 
 AppArmor is a Linux Kernel security module restrict the resources that the program or application can access, enhancing the system's overall security.
 
-**Example :**  Web-Browser don't need to access system files like `/etc/passwd` or your private data as photos. AppArmor restrict the browser to access those directories and files, so even if the program is hacked, the hacked will not have the access to sensitive data.
+**Example :**  Web-Browser don't need to access system files like `/etc/passwd` or your private data as photos. AppArmor restrict the browser to access those directories and files, so even if the program is hacked, the hacker will not have the access to sensitive data.
 
 The AppArmor uses set of rules called **profiles**, which is a configuration file that contain :
-+ what files a program can access to;
-+ what system resources can be used (Webcam as example, etc.);
-+ what types of actions a program can take (connect to internet but not run other programs).
++ what files a program can access to ;
++ what system resources can be used (Webcam as example, etc.) ;
++ what types of actions a program can take (connect to internet but not run other programs) .
 
-Automatically when you run a program the AppArmor checks if there is a profile applied for it, 
+AppArmor links a profile to a program by matching the profile's **name** to the application **executable path**. 
++ Path of Firefox ---> `/urs/bin/firefox`
++ Firefox Profile name ---> `/etc/apparmor.d/usr.bin.firefox`
+
+**Example of a Profile file:**
+
+![Profile Example](https://i.ibb.co/q9KWmZn/Croped-Profile-example.png)
+
+
+AppArmor can use two modes to handle profiles :
++ **Enforce mode** : The profile is active and the AppArmor block actions not allowed by the profile. To set ---> `sudo aa-enforce /etc/apparmor.d/usr.bin.firefox`
++ **Complain mode** : The profile is active but the AppArmor just logs violations without blocking them, this mode is good while testing a profile. The logs are on the default Linux logs path `/var/log/syslog` . To set ---> `sudo aa-complain /etc/apparmor.d/usr.bin.firefox`
+
+**Loading a Profile :** When creating or updating a profile we need to load this file to AppArmor so when enforcing it the system knows what to enforce.
+
+The command is  ---> `sudo apparmor_parser -r /etc/apparmor.d/usr.bin.firefox` 
+

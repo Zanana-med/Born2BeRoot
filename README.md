@@ -235,10 +235,20 @@ AppArmor can use two modes to handle profiles :
 The command is  ---> `sudo apparmor_parser -r /etc/apparmor.d/usr.bin.firefox` 
 
 
-# Linux Files System
-
-![Linux--File-System](https://i.ibb.co/6nSLhsJ/New-file-system-picture.png)
+# Linux File System
 
 > **NOTE THAT EVERYTHING IN LINUX IS A *FILE* !!!**
 
-The Linux file system is a structured way to organize and manage data on device in Linux OS.
+![Linux--File-System](https://i.ibb.co/6nSLhsJ/New-file-system-picture.png)
+
+The Linux file system is a structured way to organize and manage data on device in Linux OS. Let's give some time to the important directories on the root directory tree.
+
++  `/` : Root directory the top-level directory on Linux, if something happened to root directory that can cause to the entire system fail .
++ `/home` : Store personal data and configurations for each user .
++ `/boot` : Contain files needed for the system to boot .
++ `/bin` (essential binaries) : Contain the basic commands as `ls`, `cat`,`cp` in machine code .
++ `/sbin` : System binaries, includes the super-user commands used for system administration  like `adduser`, `userdel` ...
++ `/lib` : Houses essential shared libraries required by the `bin` and `sbin` binaries .
++ `/etc` : Human editable files for the system-wide configuration like `network`, `bluetooth`, `passwd` for the users account information ...
++ `/tmp` : Temporary storage for files used by programs during runtime, all those files are clearer after reboot.
+

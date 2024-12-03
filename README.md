@@ -237,7 +237,8 @@ The command is  ---> `sudo apparmor_parser -r /etc/apparmor.d/usr.bin.firefox`
 
 # Linux Files System
 
-![Linux--File-System](https://i.ibb.co/PTtL8qN/File-System.png)
+![Linux--File-System](https://i.ibb.co/6nSLhsJ/New-file-system-picture.png)
 
 > **NOTE THAT EVERYTHING IN LINUX IS A *FILE* !!!**
 
+The Linux file system is a structured way to organize and manage data on device in Linux OS.

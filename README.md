@@ -209,6 +209,8 @@ For example :
 
 AppArmor is a Linux Kernel security module restrict the resources that the program or application can access, enhancing the system's overall security.
 
+ **-** Check if active : `systemctl status apparmor`
+
 **Example :**  Web-Browser don't need to access system files like `/etc/passwd` or your private data as photos. AppArmor restrict the browser to access those directories and files, so even if the program is hacked, the hacker will not have the access to sensitive data.
 
 The AppArmor uses set of rules called **profiles**, which is a configuration file that contain :
@@ -231,4 +233,11 @@ AppArmor can use two modes to handle profiles :
 
 **Loading a Profile :** When creating or updating a profile we need to load this file to AppArmor so when enforcing it the system knows what to enforce.  
 The command is  ---> `sudo apparmor_parser -r /etc/apparmor.d/usr.bin.firefox` 
+
+
+# Linux Files System
+
+![Linux--File-System](https://i.ibb.co/PTtL8qN/File-System.png)
+
+> **NOTE THAT EVERYTHING IN LINUX IS A *FILE* !!!**
 

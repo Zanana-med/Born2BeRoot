@@ -252,3 +252,17 @@ The Linux file system is a structured way to organize and manage data on device 
 + `/etc` : Human editable files for the system-wide configuration like `network`, `bluetooth`, `passwd` for the users account information ...
 + `/tmp` : Temporary storage for files used by programs during runtime, all those files are clearer after reboot.
 
+# Partitioning, LVM and Mounting
+### > Partitions
+The partitions on the Host are a division of the device storage (HDD, SSD) into separate, isolated sections. Each section act as an isolated.
+
+For Guest the entire virtual partitions are in located inside the file allocated by the hypervisor as the virtual hard disk.
+
+
+### > LVM 
+### > Mounting
+Mounting refers to the process of making a `storage device` or a `filesystem` accessible and attached at a certain point in the directory tree called a mount point.
+
+If you have a USB drive at `dev/sdb1` and you want to mount it to the `/media/usb` directory you have yo use the command `mount /dev/sdb1 /media/usb` 
+
+For example you plug-in the USB and you don't mount it to a filesystem you won't be able to access to the files on the USB, because Linux needs the filesystem to be integrated into the directory tree.

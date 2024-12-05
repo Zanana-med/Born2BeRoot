@@ -271,8 +271,14 @@ For Guest the entire virtual partitions located inside the file allocated by the
 </p>
 
 ### > LVM 
+
+> [The Best YouTube Video To Understand The Configuration of a LVM](https://www.youtube.com/watch?v=214rUhQe7B4&t=98s&ab_channel=DorianDotSlash)
+
 LVM is short of Logical Volume Manager, allow the creation of **Groups** of disks or partitions that can be assembled into a single (or multiple) filesystems.  
 Can be used nearly for every mount point **EXCEPT** `/boot`, because GRUB cannot read from LVM metadata.
+
+![LVM](https://i.ibb.co/hF1rTyM/image.png)
+
 
 With LVM you can resize the volumes however you want, you can shrink the volume for the unused space, also growing the volume if you need to.  
 

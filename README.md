@@ -235,7 +235,11 @@ AppArmor can use two modes to handle profiles :
 The command is  ---> `sudo apparmor_parser -r /etc/apparmor.d/usr.bin.firefox` 
 
 
-# Linux File System
+# Filesystem, Partitioning, LVM and Mounting
+
+![Partitions, LVM](https://i.ibb.co/C5z346x/Lvm-Partitions.png)
+
+### > Linux File System
 
 > **NOTE THAT EVERYTHING IN LINUX IS A *FILE* !!!**
 
@@ -252,14 +256,22 @@ The Linux file system is a structured way to organize and manage data on device 
 + `/etc` : Human editable files for the system-wide configuration like `network`, `bluetooth`, `passwd` for the users account information ...
 + `/tmp` : Temporary storage for files used by programs during runtime, all those files are clearer after reboot.
 
-# Partitioning, LVM and Mounting
 ### > Partitions
-The partitions on the Host are a division of the device storage (HDD, SSD) into separate, isolated sections. Each section act as an isolated.
+The partitions on the Host are a division of the device storage (HDD, SSD) into separate, isolated sections.
 
-For Guest the entire virtual partitions are in located inside the file allocated by the hypervisor as the virtual hard disk.
+For Guest the entire virtual partitions located inside the file allocated by the hypervisor as the virtual hard disk,  Each section act as a separate **container** for a specific purpose (OS files, user data, swap space, etc.).
+
+**Types of Partitions :**
+
++ **Primary Partitions :** Is a directly accessible section of the disk that can store data or an operating system, every VM at least use one primary partition for the **root** filesystem .
++ **Extended Partitions :** Are container partition that holds additional partitions called logical partitions .
++ **Logical Partitions :** Exist inside an extended partition and behave like primary partitions, they are  numbered starting from `5` (`/dev/sda5` , `/dev/sda6` ...). Logical partitions are ideal for organizing data (separating `/home` and `/var`)
 
 
 ### > LVM 
+
+
+
 ### > Mounting
 Mounting refers to the process of making a `storage device` or a `filesystem` accessible and attached at a certain point in the directory tree called a mount point.
 

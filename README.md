@@ -257,6 +257,7 @@ The Linux file system is a structured way to organize and manage data on device 
 + `/tmp` : Temporary storage for files used by programs during runtime, all those files are clearer after reboot.
 
 ## > Partitions
+
 The partitions on the Host are a division of the device storage (HDD, SSD) into separate, isolated sections.
 
 For Guest the entire virtual partitions located inside the file allocated by the hypervisor as the virtual hard disk,  Each section act as a separate **container** for a specific purpose (OS files, user data, swap space, etc.).
@@ -289,16 +290,17 @@ So this picture provide us how the LVM is structured on the Linux system :
 
 - **Partitions :** We may only need a single part of the drive for the LVM, so we divide the drive into two partitions (`/dev/sda1` for LVM, and `/dev/sda2` for `/boot` for the system bootloader or the `/swap` partition)
 
-  >**THE LVM STRUCTURE START FROM HERE**
+>**THE LVM STRUCTURE START FROM HERE**
   
 - **Physical Volumes :** Is a partition (or an entire disk) crated using `pvcreate` command prepared to be used by LVM, After using the command `pvcreate` the partition recognized as a Physical Volume, and we cannot name the PV for example now the `/dev/sda1` is a Physical Volume we cannot rename it to `pv1`, also we can't combine two partitions into one single PV even if they are on the same disk. Each PV must map to a single partition.
   
 - **Volume Group :** The one responsible to combine multiple Physical Volumes into a single logical storage pool using the `vgcreate` command, the size of the VG is the sum of the PV, we can name the VG as we want, `vgcreate datavg /dev/sda1 /dev/sdb1 ...` we create a VG named `datavg` combine all the Physical Volumes in one space. 
   
-- **Logical Volumes :** Are created by allocating space from the VG using the `lvcreate` command, LV are virtual storage area and the function like partition  but more flexible because we can play with its size the way we want
+- **Logical Volumes :** Are created by allocating space from the VG using the `lvcreate` command, LV are virtual storage area and the function like partition  but more flexible because we can play with its size the way we want, if more space needed, add another PV to the VG and extand the LV using the command. To create LV use `lvcreate -L 100G `
 ## > Mounting
+
 Mounting refers to the process of making a `storage device` or a `filesystem` accessible and attached at a certain point in the directory tree called a mount point.
 
-If you have a USB drive at `dev/sdb1` and you want to mount it to the `/media/usb` directory you have yo use the command `mount /dev/sdb1 /media/usb` 
+If you have a USB drive at `dev/sdc1` and you want to mount it to the `/media/usb` directory you have yo use the command `mount /dev/sdc1 /media/usb` 
 
 For example you plug-in the USB and you don't mount it to a filesystem you won't be able to access to the files on the USB, because Linux needs the filesystem to be integrated into the directory tree.

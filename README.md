@@ -266,10 +266,15 @@ For Guest the entire virtual partitions located inside the file allocated by the
 + **Primary Partitions :** Is a directly accessible section of the disk that can store data or an operating system, every VM at least use one primary partition for the **root** filesystem .
 + **Extended Partitions :** Are container partition that holds additional partitions called logical partitions .
 + **Logical Partitions :** Exist inside an extended partition and behave like primary partitions, they are  numbered starting from `5` (`/dev/sda5` , `/dev/sda6` ...). Logical partitions are ideal for organizing data (separating `/home` and `/var`)
-
+<p align = "center">
+	<img src = "https://i.ibb.co/m8H02qx/MBR-Croped.png" width = "500">
+</p>
 
 ### > LVM 
+LVM is short of Logical Volume Manager, allow the creation of **Groups** of disks or partitions that can be assembled into a single (or multiple) filesystems.  
+Can be used nearly for every mount point **EXCEPT** `/boot`, because GRUB cannot read from LVM metadata.
 
+With LVM you can resize the volumes however you want, you can shrink the volume for the unused space, also growing the volume if you need to.  
 
 
 ### > Mounting

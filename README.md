@@ -239,7 +239,7 @@ The command is  ---> `sudo apparmor_parser -r /etc/apparmor.d/usr.bin.firefox`
 
 ![Partitions, LVM](https://i.ibb.co/C5z346x/Lvm-Partitions.png)
 
-### > Linux File System
+## > Linux File System
 
 > **NOTE THAT EVERYTHING IN LINUX IS A *FILE* !!!**
 
@@ -256,7 +256,7 @@ The Linux file system is a structured way to organize and manage data on device 
 + `/etc` : Human editable files for the system-wide configuration like `network`, `bluetooth`, `passwd` for the users account information ...
 + `/tmp` : Temporary storage for files used by programs during runtime, all those files are clearer after reboot.
 
-### > Partitions
+## > Partitions
 The partitions on the Host are a division of the device storage (HDD, SSD) into separate, isolated sections.
 
 For Guest the entire virtual partitions located inside the file allocated by the hypervisor as the virtual hard disk,  Each section act as a separate **container** for a specific purpose (OS files, user data, swap space, etc.).
@@ -270,20 +270,33 @@ For Guest the entire virtual partitions located inside the file allocated by the
 	<img src = "https://i.ibb.co/m8H02qx/MBR-Croped.png" width = "500">
 </p>
 
-### > LVM 
+## > LVM 
 
-> [The Best YouTube Video To Understand The Configuration of a LVM](https://www.youtube.com/watch?v=214rUhQe7B4&t=98s&ab_channel=DorianDotSlash)
+ [The Best YouTube Video To Understand The Configuration of a LVM Using Terminal](https://www.youtube.com/watch?v=214rUhQe7B4&t=98s&ab_channel=DorianDotSlash)
 
 LVM is short of Logical Volume Manager, allow the creation of **Groups** of disks or partitions that can be assembled into a single (or multiple) filesystems.  
 Can be used nearly for every mount point **EXCEPT** `/boot`, because GRUB cannot read from LVM metadata.
 
-![LVM](https://i.ibb.co/hF1rTyM/image.png)
+With LVM you can resize the volumes however you want, you can shrink the volume for the unused space, also growing the volume if you face the `space remaining` Linux message or just if you need to.  
 
+>DON'T LET THIS PICTURE SCARE YOU BODY! BY THE END OF THIS CHAPTER YOU GONNA UNDERSTAND EVERYTHING I PROMISE.
 
-With LVM you can resize the volumes however you want, you can shrink the volume for the unused space, also growing the volume if you need to.  
+![LVM](https://i.ibb.co/bgkZVyR/image.png)
 
+So this picture provide us how the LVM is structured on the Linux system :
 
-### > Mounting
+- **Hard Drives :** Are the physical disks installed on the system (HDD, SSD, also USB it can plays as a hard drive). They are represented from `/dev/sda` for the first hard drive, `/dev/sdb` for the second and so on.
+
+- **Partitions :** We may only need a single part of the drive for the LVM, so we divide the drive into two partitions (`/dev/sda1` for LVM, and `/dev/sda2` for `/boot` for the system bootloader or the `/swap` partition)
+
+  >**THE LVM STRUCTURE START FROM HERE **
+  
+- **Physical Volumes :** Is a partition (or an entire disk) crated using `pvcreate` command prepared to be used by LVM, After using the command `pvcreate` the partition recognized as a Physical Volume, and we cannot name the PV for example now the `/dev/sda1` is a Physical Volume we cannot rename it to `pv1`, also we can't combine two partitions into one single PV even if they are on the same disk. Each PV must map to a single partition.
+  
+- **Volume Group :** The one responsible to combine multiple Physical Volumes into a single logical storage pool using the `vgcreate` command, the size of the VG is the sum of the PV, we can name the VG as we want, `vgcreate datavg /dev/sda1 /dev/sdb1 ...` we create a VG named `datavg` combine all the Physical Volumes in one space. 
+  
+- **Logical Volumes :** Are created by allocating space from the VG using the `lvcreate` command, LV are virtual storage area and the function like partition  but more flexible because we can play with its size the way we want
+## > Mounting
 Mounting refers to the process of making a `storage device` or a `filesystem` accessible and attached at a certain point in the directory tree called a mount point.
 
 If you have a USB drive at `dev/sdb1` and you want to mount it to the `/media/usb` directory you have yo use the command `mount /dev/sdb1 /media/usb` 

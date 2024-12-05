@@ -289,7 +289,7 @@ So this picture provide us how the LVM is structured on the Linux system :
 
 - **Partitions :** We may only need a single part of the drive for the LVM, so we divide the drive into two partitions (`/dev/sda1` for LVM, and `/dev/sda2` for `/boot` for the system bootloader or the `/swap` partition)
 
-  >**THE LVM STRUCTURE START FROM HERE **
+  >**THE LVM STRUCTURE START FROM HERE**
   
 - **Physical Volumes :** Is a partition (or an entire disk) crated using `pvcreate` command prepared to be used by LVM, After using the command `pvcreate` the partition recognized as a Physical Volume, and we cannot name the PV for example now the `/dev/sda1` is a Physical Volume we cannot rename it to `pv1`, also we can't combine two partitions into one single PV even if they are on the same disk. Each PV must map to a single partition.
   

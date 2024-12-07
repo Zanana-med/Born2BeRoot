@@ -304,7 +304,9 @@ So this picture provide us how the LVM is structured on the Linux system :
 		+ Resault ---> New LV named data created on /dev/datavg/data with the size of 20GB
 	+ To extend : `lvextend -L +5G /dev/datavg/data`
 		+ Resault ---> The `data` LV resized to 25GB
-	
+The `-l` flag for getting the free space from the VG by percentage, `lvextend -l 50% /dev/datavg/data` extend for us the data LV by adding 50% of the VG free space .
++ **File Systems :** 
+
 ## > Mounting
 
 Mounting refers to the process of making a `storage device` or a `filesystem` accessible and attached at a certain point in the directory tree called a mount point.

@@ -306,6 +306,7 @@ So this picture provide us how the LVM is structured on the Linux system :
 		+ Resault ---> The `data` LV resized to 25GB
 The `-l` flag for getting the free space from the VG by percentage, `lvextend -l 50% /dev/datavg/data` extend for us the data LV by adding 50% of the VG free space .
 + **File Systems :** 
++ 
 
 ## > Mounting
 

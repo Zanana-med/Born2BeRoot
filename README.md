@@ -278,12 +278,14 @@ For Guest the entire virtual partitions located inside the file allocated by the
 LVM is short of Logical Volume Manager, allow the creation of **Groups** of disks or partitions that can be assembled into a single (or multiple) filesystems.  
 Can be used nearly for every mount point **EXCEPT** `/boot`, because GRUB cannot read from LVM metadata.
 
+Why LVM and not standard partitions ?  
 With LVM you can resize the volumes however you want, you can shrink the volume for the unused space, also growing the volume if you face the `space remaining` Linux message or just if you need to.  
 
 >DON'T LET THIS PICTURE SCARE YOU BODY! BY THE END OF THIS CHAPTER YOU GONNA UNDERSTAND EVERYTHING I PROMISE.
 
-![LVM](https://i.ibb.co/bgkZVyR/image.png)
-
+<p align = "center">
+	<img src = "https://i.ibb.co/bgkZVyR/image.png" >
+</p>
 So this picture provide us how the LVM is structured on the Linux system :
 
 - **Hard Drives :** Are the physical disks installed on the system (HDD, SSD, also USB it can plays as a hard drive). They are represented from `/dev/sda` for the first hard drive, `/dev/sdb` for the second and so on.
@@ -296,7 +298,13 @@ So this picture provide us how the LVM is structured on the Linux system :
   
 - **Volume Group :** The one responsible to combine multiple Physical Volumes into a single logical storage pool using the `vgcreate` command, the size of the VG is the sum of the PV, we can name the VG as we want, `vgcreate datavg /dev/sda1 /dev/sdb1 ...` we create a VG named `datavg` combine all the Physical Volumes in one space. 
   
-- **Logical Volumes :** Are created by allocating space from the VG using the `lvcreate` command, LV are virtual storage area and the function like partition  but more flexible because we can play with its size the way we want, if more space needed, add another PV to the VG and extand the LV using the command. To create LV use `lvcreate -L 100G `
+- **Logical Volumes :** You can see it as the Partition on the standard way, they are created by allocating space from the VG using the command `lvcreate -L <size> -n <LV name> <VG name>` the `n` flag for naming the Logical Volume. To extend an existing LV if more space needed use the command`lvextend -L <+NewSize> <LV_Path>`. 
+  **Examples :** 
+	+ To create : `lvcreate -L 20G data datavg`
+		+ Resault ---> New LV named data created on /dev/datavg/data with the size of 20GB
+	+ To extend : `lvextend -L +5G /dev/datavg/data`
+		+ Resault ---> The `data` LV resized to 25GB
+	
 ## > Mounting
 
 Mounting refers to the process of making a `storage device` or a `filesystem` accessible and attached at a certain point in the directory tree called a mount point.

@@ -326,7 +326,7 @@ You need first to install the **hypervisor**, in our case we gonna use **Virtual
 
 ## 2 > Link the iso file to the VM
 
-![Install the ISO file and start the Virtual box](https://i.ibb.co/PQ3Kmhy/ezgif-4-c96115d3af.gif)
+<img src = "https://s4.ezgif.com/tmp/ezgif-4-15bb392784.gif" width = "720">
 
 
 

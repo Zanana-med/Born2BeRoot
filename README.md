@@ -318,12 +318,17 @@ So this picture provide us how the LVM is structured on the Linux system :
 + **File Systems :** used to organize, store and manage files and directories on the Logical Volume making it accessible by the operating system.  
   Before attaching Logical Volume to a specific path, we need first to pass by a necessary step which is formatting the Logical Volume, creating a Logical Volume doesn't automatically prepare it to store files, it must be formatted to a filesystem structure like **ext4** which stand for the fourth extended filesystems. 
 
-# Configuring The Virtual Machine
+# Configuration of The Virtual Machine
 
-## > Requirements
+## 1 > Requirements
 
-You need first to install the **hypervisor**, in our case we gonna use **VirtualBox**, and the **iso** file which contain the instalation of our Operating System Linux and exactly the distribution of **Debian 64 bits**.  
-Here is the steps :  
+You need first to install the **hypervisor**, in our case we gonna use **VirtualBox**, and the **iso** file which contain the instalation of our Operating System Linux and exactly the distribution of **Debian 64 bits** from [the original website](https://www.debian.org/).  
+
+## 2 > Link the iso file to the VM
+
+![Install the ISO file and start the Virtual box](https://i.ibb.co/PQ3Kmhy/ezgif-4-c96115d3af.gif)
+
+
 
 # ROOT / SUDO
 

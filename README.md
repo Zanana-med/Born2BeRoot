@@ -271,6 +271,14 @@ For Guest the entire virtual partitions located inside the file allocated by the
 	<img src = "https://i.ibb.co/m8H02qx/MBR-Croped.png" width = "500">
 </p>
 
+## > Mounting
+
+Mounting refers to the process of making a `storage device` or a `filesystem` accessible and attached at a certain point in the directory tree called a mount point.
+
+If you have a USB drive at `dev/sdc1` and you want to mount it to the `/media/usb` directory you have yo use the command `mount /dev/sdc1 /media/usb` 
+
+For example you plug-in the USB and you don't mount it to a filesystem you won't be able to access to the files on the USB, because Linux needs the filesystem to be integrated into the directory tree.
+
 ## > LVM 
 
  [The Best YouTube Video To Understand The Configuration of a LVM Using Terminal](https://www.youtube.com/watch?v=214rUhQe7B4&t=98s&ab_channel=DorianDotSlash)
@@ -299,7 +307,7 @@ So this picture provide us how the LVM is structured on the Linux system :
 - **Volume Group :** The one responsible to combine multiple Physical Volumes into a single logical storage pool using the `vgcreate` command, the size of the VG is the sum of the PV, we can name the VG as we want, `vgcreate datavg /dev/sda1 /dev/sdb1 ...` we create a VG named `datavg` combine all the Physical Volumes in one space. 
   
 - **Logical Volumes :** You can see it as the Partition on the standard way, they are created by allocating space from the VG using the command `lvcreate -L <size> -n <LV name> <VG name>` the `n` flag for naming the Logical Volume. To extend an existing LV if more space needed use the command`lvextend -L <+NewSize> <LV_Path>`.  
-  **Examples :** 
+  **Examples :**
 	+ To create : `lvcreate -L 20G data datavg`
 		+ Resault ---> New LV named data created on /dev/datavg/data with the size of 20GB
 	+ To extend : `lvextend -L +5G /dev/datavg/data`
@@ -307,13 +315,18 @@ So this picture provide us how the LVM is structured on the Linux system :
 	
 	The `-l` flag for getting the free space from the VG by percentage, `lvextend -l 50% /dev/datavg/data` extend for us the data LV by adding 50% of the VG free space .
 
-+ **File Systems :** 
-+ 
++ **File Systems :** used to organize, store and manage files and directories on the Logical Volume making it accessible by the operating system.  
+  Before attaching Logical Volume to a specific path, we need first to pass by a necessary step which is formatting the Logical Volume, creating a Logical Volume doesn't automatically prepare it to store files, it must be formatted to a filesystem structure like **ext4** which stand for the fourth extended filesystems. 
 
-## > Mounting
+# Configuring The Virtual Machine
 
-Mounting refers to the process of making a `storage device` or a `filesystem` accessible and attached at a certain point in the directory tree called a mount point.
+## > Requirements
 
-If you have a USB drive at `dev/sdc1` and you want to mount it to the `/media/usb` directory you have yo use the command `mount /dev/sdc1 /media/usb` 
+You need first to install the **hypervisor**, in our case we gonna use **VirtualBox**, and the **iso** file which contain the instalation of our Operating System Linux and exactly the distribution of **Debian 64 bits**.  
+Here is the steps :  
 
-For example you plug-in the USB and you don't mount it to a filesystem you won't be able to access to the files on the USB, because Linux needs the filesystem to be integrated into the directory tree.
+# ROOT / SUDO
+
+### > ROOT
+
+	The root is the **superuser** of the Linux system, the default administrative account with unrestricted access to the entire system and all of its resources, it's the most powerful user on Linux

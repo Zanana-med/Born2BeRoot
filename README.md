@@ -235,7 +235,7 @@ AppArmor can use two modes to handle profiles :
 The command is  ---> `sudo apparmor_parser -r /etc/apparmor.d/usr.bin.firefox` 
 
 
-# Filesystem, Partitioning, LVM and Mounting
+# Filesystem, Partitioning, LVM, Mounting and ROOT user
 
 ![Partitions, LVM](https://i.ibb.co/C5z346x/Lvm-Partitions.png)
 
@@ -318,20 +318,23 @@ So this picture provide us how the LVM is structured on the Linux system :
 + **File Systems :** used to organize, store and manage files and directories on the Logical Volume making it accessible by the operating system.  
   Before attaching Logical Volume to a specific path, we need first to pass by a necessary step which is formatting the Logical Volume, creating a Logical Volume doesn't automatically prepare it to store files, it must be formatted to a filesystem structure like **ext4** which stand for the fourth extended filesystems. 
 
-# Configuration of The Virtual Machine
+## > ROOT User
 
-## 1 > Requirements
+The root is the **superuser** of the Linux system, the default administrative account with unrestricted access to the entire system and all of its resources, it's the most powerful user on Linux
 
-You need first to install the **hypervisor**, in our case we gonna use **VirtualBox**, and the **iso** file which contain the instalation of our Operating System Linux and exactly the distribution of **Debian 64 bits** from [the original website](https://www.debian.org/).  
+### > Configuration of the VM
 
-## 2 > Link the iso file to the VM
+Now you are **eligible** to start creating your own Virtual Machine. You got about 50% of the definitions to start your administration journey (on Born2BeRoot project of course hh), the other terms we gonna explain them Later.
 
-<img src = "https://s4.ezgif.com/tmp/ezgif-4-15bb392784.gif" width = "720">
+Check my G GitHub for the [Configuration](https://github.com/pasqualerossi/Born2BeRoot-Guide) steps exactly on the part 3 of the article.  
+**GET BACK HERE WHEN YOU FINISH INSTALLING YOUR VIRTUAL MACHINE 🤍**
 
+After finishing the configuration step, the first thing you should do is to make sure that your `lsblk` command result is the same as the one provided on the project PDF, everything should be like this :
 
+`lsblk` : 
 
-# ROOT / SUDO
+![lsblk command](https://i.ibb.co/qmgxGs6/image.png)
 
-### > ROOT
+ 
 
-	The root is the **superuser** of the Linux system, the default administrative account with unrestricted access to the entire system and all of its resources, it's the most powerful user on Linux
+# SUDO 

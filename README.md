@@ -1,7 +1,9 @@
 <h1 align = "center">Born2BeRoot</h1>
+
 <p align = "center">
 	<img style="display: block; margin: -30px auto;"src = "https://i.ibb.co/jh9jq5f/image.png"  width = "250">
 </p>
+
 ## How this article gonna help !
 
 
@@ -335,6 +337,7 @@ After finishing the configuration step, the first thing you should do is to make
 <p align = "center">
 	<img  src = "https://i.ibb.co/kBtnLyj/fpp-large-metallic-wall-texture-product-750x1000-u2.jpg" width="320">
 </p>
+
 The root is the **superuser** of the Linux system, the default administrative account with unrestricted access to the entire system and all of its resources, it's the most **powerful** user on Linux.  
 **The root** user has the power to :  
 + Modify system files;

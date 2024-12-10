@@ -235,7 +235,7 @@ AppArmor can use two modes to handle profiles :
 The command is  ---> `sudo apparmor_parser -r /etc/apparmor.d/usr.bin.firefox` 
 
 
-# Filesystem, Partitioning, LVM, Mounting and ROOT user
+# Filesystem, Partitioning and Mounting 
 
 ![Partitions, LVM](https://i.ibb.co/C5z346x/Lvm-Partitions.png)
 
@@ -279,7 +279,7 @@ If you have a USB drive at `dev/sdc1` and you want to mount it to the `/media/us
 
 For example you plug-in the USB and you don't mount it to a filesystem you won't be able to access to the files on the USB, because Linux needs the filesystem to be integrated into the directory tree.
 
-## > LVM 
+# LVM 
 
  [The Best YouTube Video To Understand The Configuration of a LVM Using Terminal](https://www.youtube.com/watch?v=214rUhQe7B4&t=98s&ab_channel=DorianDotSlash)
 
@@ -318,11 +318,7 @@ So this picture provide us how the LVM is structured on the Linux system :
 + **File Systems :** used to organize, store and manage files and directories on the Logical Volume making it accessible by the operating system.  
   Before attaching Logical Volume to a specific path, we need first to pass by a necessary step which is formatting the Logical Volume, creating a Logical Volume doesn't automatically prepare it to store files, it must be formatted to a filesystem structure like **ext4** which stand for the fourth extended filesystems. 
 
-## > ROOT User
-
-The root is the **superuser** of the Linux system, the default administrative account with unrestricted access to the entire system and all of its resources, it's the most powerful user on Linux
-
-### > Configuration of the VM
+#  Configuration of the VM
 
 Now you are **eligible** to start creating your own Virtual Machine. You got about 50% of the definitions to start your administration journey (on Born2BeRoot project of course hh), the other terms we gonna explain them Later.
 
@@ -336,5 +332,15 @@ After finishing the configuration step, the first thing you should do is to make
 ![lsblk command](https://i.ibb.co/qmgxGs6/image.png)
 
  
+## > ROOT User
+<img  style = "display: block; margin: 0 auto; width: 350;" src = "https://i.ibb.co/kBtnLyj/fpp-large-metallic-wall-texture-product-750x1000-u2.jpg">
 
-# SUDO 
+The root is the **superuser** of the Linux system, the default administrative account with unrestricted access to the entire system and all of its resources, it's the most **powerful** user on Linux.  
+**The root** user has the power to :  
++ Modify system files;
++ Create and manage users;
++ Manage devices like disks, network interfaces and peripherals;
++ Modify the files and directories ownership and access rights.
++ and more ...
+
+## > SSH 

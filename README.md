@@ -343,4 +343,6 @@ The root is the **superuser** of the Linux system, the default administrative ac
 + Modify the files and directories ownership and access rights.
 + and more ...
 
-## > SSH 
+## > SUDO 
+
+The ROOT is great! But with this power you can damage your system if you misused it.  

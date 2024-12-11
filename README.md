@@ -369,17 +369,14 @@ We need to know how to create a new user, new group and how to link them.
  
 For me I already add a new user when configuring the Virtual Machine, to test the commands we gonna create a new user, rename his username and then delete him .
 
-Create a new user with the username **rbassamy** :
-<p align = "center">
-	<img src = "https://i.ibb.co/0msjdCC/Your-paragraph-text.png" width = "600">
-</p>
-
+\- Create a new user with the username **rbassamy** :
 <p align = "center">
 	<img src = "https://i.ibb.co/K6dvCC6/After-Upscale.png" width = "600">
 </p>
-- `adduser <username>` : Create a new user ;
-- `usermod -l <NewUsername> <OldUsername>` : Change the username of a user ;
-- `deluser <username>` : Delete a user .
+\- Rename the username **rbassamy** into **NewName** and then **delete** the user from the system :
+<p align = "center">
+	<img src = "https://i.ibb.co/Ln16F6D/Change-the-rbassamy-to-New-Name.png">
+</p>
 
 If you want to go a little bit deeper on users read this :
 

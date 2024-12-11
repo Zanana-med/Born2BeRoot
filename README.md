@@ -338,7 +338,7 @@ After finishing the configuration step, the first thing you should do is to make
 	<img  src = "https://i.ibb.co/kBtnLyj/fpp-large-metallic-wall-texture-product-750x1000-u2.jpg" width="320">
 </p>
 
-The root is the **superuser** of the Linux system, the default administrative account with unrestricted access to the entire system and all of its resources, it's the most **powerful** user on Linux.  
+The root is the **superuser** of the Linux system, the default administrative account with unrestricted access to the entire system and all of its resources, he is the most **powerful** user on Linux.  
 **The root** user has the power to :  
 + Modify system files;
 + Create and manage users;
@@ -348,4 +348,57 @@ The root is the **superuser** of the Linux system, the default administrative ac
 
 ## > SUDO 
 
-The ROOT is great! But with this power you can damage your system if you misused it.  
+The ROOT is great! But with that huge power you can damage your entire system if you misused it.  
+The **SUDO** (Superuser DO) user on Linux as a mini-root who has the ability to execute commands with high privilege, like you're executing the command with the root user, but not all the privilege of the root, those files that the SUDO can access are limited by the root, the root user choose which files and command the SUDO could execute.  
+
+### Install SUDO utility
+
+First change the user to the root using the `su -` command and using the apt package manager make the command `apt install sudo` to install the SUDO, then reboot the system to be activated using the command `sudo reboot`  
+<p align = "center ">
+	<img src = "https://i.ibb.co/6mwg849/Switch-the-user-to-the-ROOT.png" width ="550" >
+</p>
+
+### Creating of users and groups
+
+![users and groups configuration](https://i.ibb.co/wQ1fLnz/image.png)
+
+We need to know how to create a new user, new group and how to link them.  
+#### Users
+
+>You can check my [Commands file](https://github.com/Zanana-med/Born2BeRoot/blob/main/Commands.md) for the list of all the commands used!
+ 
+For me I already add a new user when configuring the Virtual Machine, to test the commands we gonna create a new user, rename his username and then delete him .
+
+Create a new user with the username **rbassamy** :
+<p align = "center">
+	<img src = "https://i.ibb.co/0msjdCC/Your-paragraph-text.png" width = "600">
+</p>
+
+<p align = "center">
+	<img src = "https://i.ibb.co/K6dvCC6/After-Upscale.png" width = "600">
+</p>
+- `adduser <username>` : Create a new user ;
+- `usermod -l <NewUsername> <OldUsername>` : Change the username of a user ;
+- `deluser <username>` : Delete a user .
+
+If you want to go a little bit deeper on users read this :
+
+\- When creating a new user also a group is created with the same username.  
+\- All the users are stored on the file `/etc/passwd` , users passwords are stored on the file `/etc/shadow` as hashed format.
+\- `usermod` command stand for user modification
+
+#### Groups
+
+- `addgroup <GroupName>` : Create a new group ;
+- `groupmod -n <NewName> <OldName>` : Change the group name ;
+- `delgroup <GroupName>` : Delete the group, but the users still exist ; 
+- `cat /etc/group` : Display all the groups on the system ;
+
+#### Linking
+
+`adduser <username> <GroupeName>` : Add a user to a group ;
+
+## Sudoers file 
+
+`sudoers file` is a file that define which users and groups have permission to execute with the sudo command, the file located on `/etc/sudoers` and the safest way to edit this file is by the command `sudo visudo` for syntax validation to not messed up the system by error.
+

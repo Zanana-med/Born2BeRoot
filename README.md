@@ -389,12 +389,12 @@ Now we gonna create a group, add a user to it, display the groups of a user and 
 </p>  
 
 
+## Sudo Configuration
+<p align = "center">
+	<img src ="https://i.ibb.co/k8WR09Y/Screenshot-from-2024-12-11-07-09-55.png" width ="500">
+</p>
 
-#### Linking
-
-`adduser <username> <GroupeName>` : Add a user to a group ;
-
-## Sudoers file 
+### Sudoers file 
 
 `sudoers file` is a file that define which users and groups have permission to execute with the sudo command, the file located on `/etc/sudoers` and the safest way to edit this file is by the command `sudo visudo` for syntax validation to not messed up the system by error.
 

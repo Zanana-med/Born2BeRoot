@@ -363,7 +363,7 @@ First change the user to the root using the `su -` command and using the apt pac
 ![users and groups configuration](https://i.ibb.co/wQ1fLnz/image.png)
 
 We need to know how to create a new user, new group and how to link them.  
-#### Users
+#### Users and Groups
 
 >You can check my [Commands file](https://github.com/Zanana-med/Born2BeRoot/blob/main/Commands.md) for the list of all the commands used!
  
@@ -372,24 +372,23 @@ For me I already add a new user when configuring the Virtual Machine, to test th
 \- Create a new user with the username **rbassamy** :
 <p align = "center">
 	<img src = "https://i.ibb.co/K6dvCC6/After-Upscale.png" width = "600">
-</p>
+</p>  
+
 \- Rename the username **rbassamy** into **NewName** and then **delete** the user from the system :
 <p align = "center">
 	<img src = "https://i.ibb.co/Ln16F6D/Change-the-rbassamy-to-New-Name.png">
 </p>
-
-If you want to go a little bit deeper on users read this :
-
+Note that :  
 \- When creating a new user also a group is created with the same username.  
-\- All the users are stored on the file `/etc/passwd` , users passwords are stored on the file `/etc/shadow` as hashed format.
+\- All the users are stored on the file `/etc/passwd` , users passwords are stored on the file `/etc/shadow` as hashed format.  
 \- `usermod` command stand for user modification
 
-#### Groups
+Now we gonna create a group, add a user to it, display the groups of a user and how to  remove a user from a group :
+<p align = "center">
+	<img src = "https://i.ibb.co/M6B8TJn/Add-a-user-to-a-Group.png">
+</p>  
 
-- `addgroup <GroupName>` : Create a new group ;
-- `groupmod -n <NewName> <OldName>` : Change the group name ;
-- `delgroup <GroupName>` : Delete the group, but the users still exist ; 
-- `cat /etc/group` : Display all the groups on the system ;
+
 
 #### Linking
 

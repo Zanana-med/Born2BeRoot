@@ -60,7 +60,7 @@ The hypervisor create for every new OS all the resources it needs so the new VM 
 
 The Hypervisor manage and allocate the portions of all the resources needed so that every OS think its inside a real computer.
 
-+ **Virtual CPU :** The hypervisor allocate certain number of vCPU (Virtual CPU) to the virtual machine, which are abstracted from the physical CPU.
++ **Virtual CPU :** The hypervisor allocate certain number of vCPU (Virtual CPU) to the virtual machine, which are abstracted from the physical CPU.![lsblk comma
 
 + **Virtual Ram :** When configuring a VM, you choose how much the hypervisor allocate of the physical memory to the guest OS from the host RAM, ensuring it wouldn't access the other host memory.
 
@@ -102,7 +102,6 @@ The operating system interact directly with the hardware with the help of its ke
 ### > Linux is not what you think it is !!!!!
 
 You think that Linux is an entire operating system where you run commands like `ls`, `cp`, `cat`, etc. Including shell command-lines and libraries such glibc for running programs.
-
 But you're completely wrong my friend! Because here you are talking about the GNU not the Linux.
 
 Linux is the kernel, the core of the operating system, the entire OS is named GNU/Linux which combine the Linux kernel and the GNU Project tools and utilities
@@ -323,14 +322,13 @@ So this picture provide us how the LVM is structured on the Linux system :
 
 Now you are **eligible** to start creating your own Virtual Machine. You got about 50% of the definitions to start your administration journey (on Born2BeRoot project of course hh), the other terms we gonna explain them Later.
 
-Check my G GitHub for the [Configuration](https://github.com/pasqualerossi/Born2BeRoot-Guide) steps exactly on the part 3 of the article.  
-**GET BACK HERE WHEN YOU FINISH INSTALLING YOUR VIRTUAL MACHINE 🤍**
+After configuring your Virtual Machine with the help of this [video](https://www.youtube.com/watch?v=jxReupv7UOo&ab_channel=Iv%C3%A1nAgudoD%C3%ADaz), **GET BACK HERE TO START OUR REAL JOURNEY 🤍**
 
 After finishing the configuration step, the first thing you should do is to make sure that your `lsblk` command result is the same as the one provided on the project PDF, everything should be like this :
 
 `lsblk` : 
 
-![lsblk command](https://i.ibb.co/qmgxGs6/image.png)
+![lsblk command](https://i.ibb.co/4J8XqD0/Screenshot-from-2024-12-11-07-14-13.png)
 
  
 ## > ROOT User
@@ -354,9 +352,9 @@ The **SUDO** (Superuser DO) user on Linux as a mini-root who has the ability to 
 ### Install SUDO utility
 
 First change the user to the root using the `su -` command and using the apt package manager make the command `apt install sudo` to install the SUDO, then reboot the system to be activated using the command `sudo reboot`  
-<p align = "center ">
-	<img src = "https://i.ibb.co/6mwg849/Switch-the-user-to-the-ROOT.png" width ="550" >
-</p>
+<p align = "center">
+	<img src = "https://i.ibb.co/mbH648K/The-command-to-install-SUDO-utility.png" width = "800">
+</p>  
 
 ### Creating of users and groups
 

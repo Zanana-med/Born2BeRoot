@@ -328,7 +328,7 @@ After finishing the configuration step, the first thing you should do is to make
 
 `lsblk` : 
 
-![lsblk command](https://i.ibb.co/4J8XqD0/Screenshot-from-2024-12-11-07-14-13.png)
+<img src = "https://i.ibb.co/4J8XqD0/Screenshot-from-2024-12-11-07-14-13.png)" width = "600">
 
  
 ## > ROOT User
@@ -387,12 +387,36 @@ Now we gonna create a group, add a user to it, display the groups of a user and 
 </p>  
 
 
-## Sudo Configuration
+## Sudo group Configuration
 <p align = "center">
 	<img src ="https://i.ibb.co/k8WR09Y/Screenshot-from-2024-12-11-07-09-55.png" width ="500">
 </p>
 
-### Sudoers file 
+We're going to edit the sudoers file to configure the sudo group.
 
-`sudoers file` is a file that define which users and groups have permission to execute with the sudo command, the file located on `/etc/sudoers` and the safest way to edit this file is by the command `sudo visudo` for syntax validation to not messed up the system by error.
+BUT WHAT IS A **SUDOER FILE ?**   
+`sudoers file` is a file that define which users and groups have permission to execute with the sudo command, also contain the configurations of the sudo group, the file located on `/etc/sudoers` and the safest way to edit this file is `visudo` command, for syntax validation to not messed up the system by error.
 
+Let's edit the sudoers file using the command `visudo` to configure our **sudo group** :
+
+<img src="https://i.ibb.co/j61ntYQ/image.png" width = "500">
+
+🔴 Total tries for the user to enter the right password ;  
+🟠 The custom message appear when the password is incorrect ;  
+🟡 Active the logs for the input commands from the user ;  
+🟢 Active the logs for the output result displayed on terminal ;  
+🔵 The PATH where the logs gonna stored ;  
+🟣 Require the TTY mode for all the sudo commands .
+
+**What is TTY ?**  
+TTY is a mode stand for Teletypewriter, in Linux every terminal session is associated with a TTY, when **TTY mode** is enables for `sudo`, it ensures that `sudo` command are only executed from a terminal session not a **scripts** or **malicious programs**, making sure the command is used only in interactive terminal session where the user is **present**.
+
+**How can i see the Logs ?**  
+Simply by using the command `sudoreplay /var/log/sudo/00/00/0x`, and the x is the number of the `sudo` command executed.
+
+
+## Password policy
+
+![strong password policy](https://i.ibb.co/m0x96GP/Screenshot-from-2024-12-12-06-16-09.png)
+
+Let's jump into the configuration of the password policy to make it strong :

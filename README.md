@@ -444,8 +444,21 @@ We need to configure the passwords of the `root` and `mzanana` users manually, b
 
 For those advanced configurations and without using a package, we may need to make a script and call it everytime and that take us lot of time. Instead we gonna use a package to make our life easy.
 
-The package called `pam_pwquality` and we gonna install it using the command :  
-<img src = "https://i.ibb.co/0QTYWnn/libpam.png" width ="500">
+The package called `pam_pwquality` and we gonna install it using the command :
 
+<p align = "center">
+	<img src = "https://i.ibb.co/0QTYWnn/libpam.png" width ="500">
+</p>
 We install now the package! To use it we gonna edit the file `/etc/pam.d/common-password` :
 
+![](https://i.ibb.co/SPztGRB/image.png)
+
+this is the part missing on the first line after the `maxrepeat` command :
+<img src="https://i.ibb.co/djZrY9v/image.png" width="350">
+
+the entire configuration :  
+```
+password      requisite      pam_pwquality.so  minlen=10 ucredit=-1 lcredit=-1 dcredit=-1 maxrepeat=3 reject_username enforce_for_root
+
+password      requisite      pam_pwquality.so difok=7
+```

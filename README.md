@@ -315,6 +315,8 @@ So this picture provide us how the LVM is structured on the Linux system :
 
 + **File Systems :** used to organize, store and manage files and directories on the Logical Volume making it accessible by the operating system.  
   Before attaching Logical Volume to a specific path, we need first to pass by a necessary step which is formatting the Logical Volume, creating a Logical Volume doesn't automatically prepare it to store files, it must be formatted to a filesystem structure like **ext4** which stand for the fourth extended filesystems. 
+  
+  
 
 #  Configuration of the VM
 
@@ -415,9 +417,7 @@ Simply by using the command `sudoreplay /var/log/sudo/00/00/0x`, and the x is th
 
 ## Password policy
 
-![strong password policy](https://i.ibb.co/m0x96GP/Screenshot-from-2024-12-12-06-16-09.png) 
-
-Let's jump into the configuration by starting with those three requirements :
+**Let's begin the configuration by those three requirements :**
 
 ![the first three pass equirements](https://i.ibb.co/X8kSTkf/Screenshot-from-2024-12-13-06-26-00.png) 
 
@@ -437,4 +437,15 @@ We need to configure the passwords of the `root` and `mzanana` users manually, b
 ![change old users pass config manually ](https://i.ibb.co/58HnKZC/The-command-to-create-a-new-user.png)
 
 
+**Let's jump to the next step :**
+
+![10 characters, uper, lower, digit ...](https://i.ibb.co/1rtnfFf/Untddditled-design.png)
+
+
+For those advanced configurations and without using a package, we may need to make a script and call it everytime and that take us lot of time. Instead we gonna use a package to make our life easy.
+
+The package called `pam_pwquality` and we gonna install it using the command :  
+<img src = "https://i.ibb.co/0QTYWnn/libpam.png" width ="500">
+
+We install now the package! To use it we gonna edit the file `/etc/pam.d/common-password` :
 

@@ -453,12 +453,22 @@ We install now the package! To use it we gonna edit the file `/etc/pam.d/common-
 
 ![](https://i.ibb.co/SPztGRB/image.png)
 
-this is the part missing on the first line after the `maxrepeat` command :
+this is the part missing on the first line after the `maxrepeat` option :
 <img src="https://i.ibb.co/djZrY9v/image.png" width="350">
 
 the entire configuration :  
 ```
-password      requisite      pam_pwquality.so  minlen=10 ucredit=-1 lcredit=-1 dcredit=-1 maxrepeat=3 reject_username enforce_for_root
-
+password      requisite      pam_pwquality.so minlen=10 ucredit=-1 lcredit=-1 dcredit=-1 maxrepeat=3 reject_username enforce_for_root
 password      requisite      pam_pwquality.so difok=7
 ```
+
+The explanation of each option :
+
+⚪ `minlen = 10`           : Password should be at least 10 characters; 
+🔴 `ucredit = -1`         : `-1` refer to the need of minimum one uppercase character on the password, if the number is `+ 4` means that the maximum of uppercase characters is 4 characters;
+🔵 `lcredit = -1`         : At least one lowercase character;
+🟢 `dcredit = -1`         : At least one digit from `0123456789` on the password;
+🟡 `maxrepeat = 3`       : Can't type the same character four times following each other. `mzaaaanana` is not valid! 
+🟣 `reject_username`   : The username shouldn't exist on the password;
+⚫ `enforce_for_root` : Those policies are applied also for the `root` user;
+🟠 `difok = 7`              : The `difok` option stand for `DIFference OK`, the system make a character by character comparison between the old  and new passwords, starting with `difok = 0`. Each time characters in the same position are differ, `difok` value incremented by `1`. Once the comparison reaches the end of either password, if `difok >= 7` then the new password is valid, otherwise an error message is displayed. 

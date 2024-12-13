@@ -7,13 +7,11 @@
 ## How this article gonna help !
 
 
->**WE ARE NOT HERE ONLY FOR THE CONFIGURATION OF THE VIRTUAL MACHINE, IF THAT'S WHAT YOU WANT DON'T CONTINUE THIS MASTERPIECE ARTICLE WHICH FULL OF KNOWLEDGE AND INFORMATION, GO WATCH A 10 MIN YOUTUBE VIDEO AND STAY LIKE AN ILLITERATE** 
+>**YOU ARE NOT HERE *ONLY* FOR THE CONFIGURATION OF THE VIRTUAL MACHINE, IF THAT'S WHAT YOU WANT! DON'T READ THIS MASTERPIECE WHICH FULL OF KNOWLEDGE AND INFORMATION, GO WATCH A 10 MIN YOUTUBE VIDEO hhh (shame on you buddy)** 
 
 You wanna pass the 42 Born2BeRoot Project **DO YOU ??** 
 
 So we're going into the main PDF subject, and everytime we find a keyword or any scary word that we don't face everyday ! We gonna take our time to understand it and know how to work with it. Part per Part of the PDF until we finish the whole project ✅
-
-<br>
 
 # <u>Let's start !</u>
 
@@ -22,7 +20,7 @@ So we're going into the main PDF subject, and everytime we find a keyword or any
 
 **Machine ?????**
 
-The `Machine`here refer to the **Virtual machine** exactly. Let's understand what is it, and why you should use one also ! ...
+The `Machine`here refer to **Virtual Machine** exactly. Let's understand what is it and why you should use one also !
 
 # **Virtual Machine**
 

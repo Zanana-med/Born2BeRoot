@@ -425,3 +425,16 @@ For that we need to edit the `login.def` file, find the `Password aging controls
 
 ![PASS_...](https://i.ibb.co/Gk1f78x/Screenshot-from-2024-12-13-06-32-49.png)
 
+To make sure that everything worked fine, use the `chage -l <username>` command.
+
+![chage -l \<usernme>](https://i.ibb.co/4pPZpts/password.png)
+
+**WHAT'S GOING ON ?? WHY OUR CHANGES ARE NOT APPLIED ???**   
+Relax buddy everything works perfectly as we want! Our changes are applied only for the new users, not to those who already exist on our system.
+
+We need to configure the passwords of the `root` and `mzanana` users manually, by the help of `chage`  command again.
+
+![change old users pass config manually ](https://i.ibb.co/58HnKZC/The-command-to-create-a-new-user.png)
+
+
+

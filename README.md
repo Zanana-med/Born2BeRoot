@@ -415,8 +415,3 @@ TTY is a mode stand for Teletypewriter, in Linux every terminal session is assoc
 Simply by using the command `sudoreplay /var/log/sudo/00/00/0x`, and the x is the number of the `sudo` command executed.
 
 
-## Password policy
-
-![strong password policy](https://i.ibb.co/m0x96GP/Screenshot-from-2024-12-12-06-16-09.png)
-
-Let's jump into the configuration of the password policy to make it strong :

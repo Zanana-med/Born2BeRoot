@@ -434,8 +434,7 @@ Relax buddy everything works perfectly as we want! Our changes are applied only 
 
 We need to configure the passwords of the `root` and `mzanana` users manually, by the help of `chage`  command again.
 
-![change old users pass config manually ](https://i.ibb.co/58HnKZC/The-command-to-create-a-new-user.png)
-
+<img src ="https://i.ibb.co/58HnKZC/The-command-to-create-a-new-user.png" width = "550">
 
 **Let's jump to the next step :**
 

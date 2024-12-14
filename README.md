@@ -315,8 +315,6 @@ So this picture provide us how the LVM is structured on the Linux system :
 
 + **File Systems :** used to organize, store and manage files and directories on the Logical Volume making it accessible by the operating system.  
   Before attaching Logical Volume to a specific path, we need first to pass by a necessary step which is formatting the Logical Volume, creating a Logical Volume doesn't automatically prepare it to store files, it must be formatted to a filesystem structure like **ext4** which stand for the fourth extended filesystems. 
-  
-  
 
 #  Configuration of the VM
 
@@ -356,14 +354,11 @@ First change the user to the root using the `su -` command and using the apt pac
 	<img src = "https://i.ibb.co/mbH648K/The-command-to-install-SUDO-utility.png" width = "800">
 </p>  
 
-### Creating of users and groups
+## Creating of users and groups
 
 ![users and groups configuration](https://i.ibb.co/wQ1fLnz/image.png)
 
 We need to know how to create a new user, new group and how to link them.  
-#### Users and Groups
-
->You can check my [Commands file](https://github.com/Zanana-med/Born2BeRoot/blob/main/Commands.md) for the list of all the commands used!
  
 For me I already add a new user when configuring the Virtual Machine, to test the commands we gonna create a new user, rename his username and then delete him .
 
@@ -386,36 +381,13 @@ Now we gonna create a group, add a user to it, display the groups of a user and 
 	<img src = "https://i.ibb.co/M6B8TJn/Add-a-user-to-a-Group.png">
 </p>  
 
-
-## Sudo group Configuration
-<p align = "center">
-	<img src ="https://i.ibb.co/k8WR09Y/Screenshot-from-2024-12-11-07-09-55.png" width ="500">
-</p>
-
-We're going to edit the sudoers file to configure the sudo group.
-
-BUT WHAT IS A **SUDOER FILE ?**   
-`sudoers file` is a file that define which users and groups have permission to execute with the sudo command, also contain the configurations of the sudo group, the file located on `/etc/sudoers` and the safest way to edit this file is `visudo` command, for syntax validation to not messed up the system by error.
-
-Let's edit the sudoers file using the command `visudo` to configure our **sudo group** :
-
-<img src="https://i.ibb.co/j61ntYQ/image.png" width = "500">
-
-🔴 Total tries for the user to enter the right password ;  
-🟠 The custom message appear when the password is incorrect ;  
-🟡 Active the logs for the input commands from the user ;  
-🟢 Active the logs for the output result displayed on terminal ;  
-🔵 The PATH where the logs gonna stored ;  
-🟣 Require the TTY mode for all the sudo commands .
-
-**What is TTY ?**  
-TTY is a mode stand for Teletypewriter, in Linux every terminal session is associated with a TTY, when **TTY mode** is enables for `sudo`, it ensures that `sudo` command are only executed from a terminal session not a **scripts** or **malicious programs**, making sure the command is used only in interactive terminal session where the user is **present**.
-
-**How can i see the Logs ?**  
-Simply by using the command `sudoreplay /var/log/sudo/00/00/0x`, and the x is the number of the `sudo` command executed.
+# > SSH
 
 
-## Password policy
+# > UFW
+
+
+# > Password policy
 
 **Let's begin the configuration by those three requirements :**
 
@@ -472,3 +444,38 @@ The explanation of each option :
 🟣 `reject_username`   : The username shouldn't exist on the password;  
 ⚫ `enforce_for_root` : Those policies are applied also for the `root` user;  
 🟠 `difok = 7`              : The `difok` option stand for `DIFference OK`, the system make a character by character comparison between the old  and new passwords, starting with `difok = 0`. Each time characters in the same position are differ, `difok` value incremented by `1`. Once the comparison reaches the end of either password, if `difok >= 7` then the new password is valid, otherwise an error message is displayed.   
+
+
+**Those policies are applied for the new users, to change the current password of the `root` and `mzanana` users just use the `passwd` command**
+<p align="center">
+	<img src="https://i.ibb.co/DGBqXVb/Screenshot-from-2024-12-14-04-18-37.png" width="400">
+</p>
+
+# Sudo group Configuration
+<p align = "center">
+	<img src ="https://i.ibb.co/k8WR09Y/Screenshot-from-2024-12-11-07-09-55.png" width ="500">
+</p>
+
+We're going to edit the sudoers file to configure the sudo group.
+
+BUT WHAT IS A **SUDOER FILE ?**   
+`sudoers file` is a file that define which users and groups have permission to execute with the sudo command, also contain the configurations of the sudo group, the file located on `/etc/sudoers` and the safest way to edit this file is `visudo` command, for syntax validation to not messed up the system by error.
+
+Let's edit the sudoers file using the command `visudo` to configure our **sudo group** :
+
+<img src="https://i.ibb.co/j61ntYQ/image.png" width = "500">
+
+🔴 Total tries for the user to enter the right password ;  
+🟠 The custom message appear when the password is incorrect ;  
+🟡 Active the logs for the input commands from the user ;  
+🟢 Active the logs for the output result displayed on terminal ;  
+🔵 The PATH where the logs gonna stored ;  
+🟣 Require the TTY mode for all the sudo commands .
+
+**What is TTY ?**  
+TTY is a mode stand for Teletypewriter, in Linux every terminal session is associated with a TTY, when **TTY mode** is enables for `sudo`, it ensures that `sudo` command are only executed from a terminal session not a **scripts** or **malicious programs**, making sure the command is used only in interactive terminal session where the user is **present**.
+
+**How can i see the Logs ?**  
+Simply by using the command `sudoreplay /var/log/sudo/00/00/0x`, and the x is the number of the `sudo` command executed.
+
+

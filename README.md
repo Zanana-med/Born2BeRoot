@@ -371,6 +371,7 @@ For me I already add a new user when configuring the Virtual Machine, to test th
 <p align = "center">
 	<img src = "https://i.ibb.co/Ln16F6D/Change-the-rbassamy-to-New-Name.png">
 </p>
+
 Note that :  
 \- When creating a new user also a group is created with the same username.  
 \- All the users are stored on the file `/etc/passwd` , users passwords are stored on the file `/etc/shadow` as hashed format.  

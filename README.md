@@ -1,7 +1,7 @@
 <h1 align = "center">Born2BeRoot</h1>
 
 <p align = "center">
-	<img style="display: block; margin: -30px auto;"src = "https://i.ibb.co/jh9jq5f/image.png"  width = "250">
+	<img src = "https://i.ibb.co/jh9jq5f/image.png"  width = "250">
 </p>
 
 ## How this article gonna help !

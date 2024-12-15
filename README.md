@@ -393,7 +393,11 @@ It's the time to configure the SSH service on our system. BUT **what is SSH? POR
 
 ### Network Port
 
-**Port** is a logical connection (*not physical*) used by programs and services to exchange information 
+**Port** is a logical connection (*not physical*) used by programs and services to exchange information. The port have a unique number that identifies the service, for example here hare some of the common port numbers :  
++ Port 80, 443 : Web pages (HTTP, HTTPS);
++ Port 21 : FTP (File Transfer Protocol);
++ Poert 22 : SSH.  
+Port is always associated with an IP address (Identifier of a device on the network), the IP address determine the geography location of the server, and the port determine which service to use on that server 
 
 ### SSH
 **SSH** stand for **S**ecure **SH**ell, is a network protocol designed to secure the connection between two systems (client and server) by encrypting the communication, provide secure way to execute commands, transfer file or manage server.

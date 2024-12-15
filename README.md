@@ -58,7 +58,7 @@ The hypervisor create for every new OS all the resources it needs so the new VM 
 
 The Hypervisor manage and allocate the portions of all the resources needed so that every OS think its inside a real computer.
 
-+ **Virtual CPU :** The hypervisor allocate certain number of vCPU (Virtual CPU) to the virtual machine, which are abstracted from the physical CPU.![lsblk comma
++ **Virtual CPU :** The hypervisor allocate certain number of vCPU (Virtual CPU) to the virtual machine, which are abstracted from the physical CPU.
 
 + **Virtual Ram :** When configuring a VM, you choose how much the hypervisor allocate of the physical memory to the guest OS from the host RAM, ensuring it wouldn't access the other host memory.
 
@@ -182,7 +182,7 @@ When requesting a package \` `apt install firefox` \`  the Apt checks which depe
 
 **Update Package Metadata**
 
-When you run : `sudo apt update` the Apt downloads the latest updates of the packages from the repositories as versions, dependencies and descriptions and store this data locally on `/var/lib/apt/lists/` for faster lookups.  
+When you run : `sudo apt update` the Apt downloads the latest updates of the packages from the repositories as versions, dependencies and descriptions and store this data locally on `/var/lib/apt/lists/` for faster lookup.  
 
 
 ### > Aptitude
@@ -389,8 +389,14 @@ Now we gonna create a group, add a user to it, display the groups of a user and 
 
 ![SSH FROM PDF](https://i.ibb.co/yFytvtz/Screenshot-from-2024-12-15-04-57-00.png)
 
-It's the time to configure the SSH service on our system. BUT **what is SSH?**  
+It's the time to configure the SSH service on our system. BUT **what is SSH? PORT??**  
 
+### Network Port
+
+**Port** is a logical connection (*not physical*) used by programs and services to exchange information 
+
+### SSH
+**SSH** stand for **S**ecure **SH**ell, is a network protocol designed to secure the connection between two systems (client and server) by encrypting the communication, provide secure way to execute commands, transfer file or manage server.
 
 
 # > UFW

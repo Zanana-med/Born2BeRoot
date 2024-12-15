@@ -233,7 +233,7 @@ AppArmor can use two modes to handle profiles :
 The command is  ---> `sudo apparmor_parser -r /etc/apparmor.d/usr.bin.firefox` 
 
 
-# Filesystem, Partitioning and Mounting 
+# Filesystem, Booting, Partitioning and Mounting 
 
 ![Partitions, LVM](https://i.ibb.co/C5z346x/Lvm-Partitions.png)
 
@@ -253,6 +253,9 @@ The Linux file system is a structured way to organize and manage data on device 
 + `/lib` : Houses essential shared libraries required by the `bin` and `sbin` binaries .
 + `/etc` : Human editable files for the system-wide configuration like `network`, `bluetooth`, `passwd` for the users account information ...
 + `/tmp` : Temporary storage for files used by programs during runtime, all those files are clearer after reboot.
+## > Booting
+
+### // To do
 
 ## > Partitions
 
@@ -383,6 +386,11 @@ Now we gonna create a group, add a user to it, display the groups of a user and 
 </p>  
 
 # > SSH
+
+![SSH FROM PDF](https://i.ibb.co/yFytvtz/Screenshot-from-2024-12-15-04-57-00.png)
+
+It's the time to configure the SSH service on our system. BUT **what is SSH?**  
+
 
 
 # > UFW

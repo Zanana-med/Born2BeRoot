@@ -441,6 +441,10 @@ As you can see that the SSH is **ACTIVE** but on the port 22! The subject ask us
 	  <img src = "https://i.ibb.co/j4gTk6k/Screenshot-from-2024-12-16-17-30-52.png" width="300">
 	</p>
 		
+To activate those changes we're going to restart the ssh service using the command `service ssh restart` 
+
+![final ssh status after the port changing](https://i.ibb.co/2t3m2bL/Untddddditled-design.png)
+
 
 # > UFW
 

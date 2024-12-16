@@ -396,12 +396,26 @@ It's the time to configure the SSH service on our system. BUT **what is SSH? POR
 **Port** is a logical connection (*not physical*) used by programs and services to exchange information. The port have a unique number that identifies the service, for example here hare some of the common port numbers :  
 + Port 80, 443 : Web pages (HTTP, HTTPS);
 + Port 21 : FTP (File Transfer Protocol);
-+ Poert 22 : SSH.  
-Port is always associated with an IP address (Identifier of a device on the network), the IP address determine the geography location of the server, and the port determine which service to use on that server 
++ Port 22 : SSH.  
+Port is always associated with an IP address (Identifier of a device on the network), the IP address determine the geography location of the server, and the port determine which service to use on that server.
 
 ### SSH
-**SSH** stand for **S**ecure **SH**ell, is a network protocol designed to secure the connection between two systems (client and server) by encrypting the communication, provide secure way to execute commands, transfer file or manage server.
 
+**SSH** stand for **S**ecure **SH**ell, SSH is a network protocol designed to secure the connection between two systems (client and server) by encrypting the communication, provide secure way to execute commands, transfer file or manage server.
+
+Before diving into the SSH commands, let's first understand how SSH works behind the scenes (Don't worry, we won't go too deep. RELAX, BUDDY! hh)  :  
+
++ **1- Client initiates the connection :** The client first sends an initial handshake packet to the server indicating it want to start a new SSH session, that happened on the **Transport Layer** of the network (TCP protocol);
+
++ **2- Server response :** The SSH Daemon (sshd) on the server listen for incoming connections on ssh port, after receiving the client packet the server send its identity via public key plus the supported encryption algorithms as part of the handshake;
+
++ **3- Key exchange & Encryption setup :** The both server and client negotiate for a session key using key exchange algorithm, the client validate the server's public key to be sure of the right server, the client generate a session key and encrypt it using the public key of the server, the server now decrypts the session key using its private key , now both parties shared the same key session.   
+
++ **4- Client Authentication :** 
+	+ **Password Authentication :** the client user provide a password and the server verifies the password against its local database;
+	+ **Public Key Authentication :** The client sends digital signature created with its private key and the server validate the signature using the client's public key.
+
+After a successful authentication, the SSH session is established and the communication is encrypted using the session key.  
 
 # > UFW
 

@@ -417,6 +417,31 @@ Before diving into the SSH commands, let's first understand how SSH works behind
 
 After a successful authentication, the SSH session is established and the communication is encrypted using the session key.  
 
+##### **Let's start now the SHH configuration**  
+
+- We need first to update the package manager for the latest services updates : `apt update`  
+- Then to install the main tool for remote access with the SSH protocol using OpenSSH : `apt install openssh-server`  
+
+- Let's check the ssh status using the command : `service ssh status` 
+![SSH status](https://i.ibb.co/mBbgwMQ/Untitldded-design.png)
+
+As you can see that the SSH is **ACTIVE** but on the port 22! The subject ask us to use the port 4242 as the **SSH PORT**. So we're going to change it using those two files :
+
++ `/etc/ssh/sshd_config` : you'll find a line with a comment `#Port 22` change it to `Port 4242`
+  <p align="center">
+	  <img src = "https://i.ibb.co/3kWjKBD/Screenshot-from-2024-12-16-17-19-44.png" width="350">
+	</p>
+			Also on the same file we will block the root from using ssh for remote connection using the line `#PermitRootLogin prohibit_password` into `PermitRootLogin no`
+		  <p align="center">
+	  <img src = "https://i.ibb.co/k1grp58/Screenshot-from-2024-12-16-17-25-43.png" width="350">
+	</p>
+	
++ `/etc/ssh/ssh_config` : Also find the port line and change it to `Port 4242`
+    <p align="center">
+	  <img src = "https://i.ibb.co/j4gTk6k/Screenshot-from-2024-12-16-17-30-52.png" width="300">
+	</p>
+		
+
 # > UFW
 
 

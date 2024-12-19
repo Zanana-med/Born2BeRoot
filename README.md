@@ -474,9 +474,27 @@ To start a new session on host : `ssh <username>@<IpAddress> -p <port>`;
 		
 To finish the session : `exit`.
 
+#### **The next part is optional because am crazy 🤪**
+
+What if we want to remotely connect our server using the **public key** instead of putting the password every time ?
+
+We need first to generate the public key on our host machine using the command : `ssh-keygen`.
+
+In your **Guest** OS if  `~/.ssh` is not found then you need first to create the SSH directory :  
+`cd ~` ---> `mkdir .ssh && chmod 700 .ssh .
+
+Now we need to add the host public key to the guest system so it can be recognized when connecting.  
+For that we need to create a new file named `authorized-keys` on the SSH guest directory.  
+Copy the key to the authorized file using the command : `ssh-copy-id -i ~/.ssh/id_rsa_pub -p 4242 mzanana@127.0.0.2 
 
 
-  
+![Copy public key to the authorized guest file](https://i.ibb.co/stTKGtW/Screenshot-from-2024-12-19-13-46-39.png)
+
+No password authentication for the `mzanana` user :
+<p align = "center">
+	<img src = "https://i.ibb.co/VBWHTYN/Screenshot-from-2024-12-19-14-13-48.png" width="500">
+</p>
+
 # > UFW
 
 

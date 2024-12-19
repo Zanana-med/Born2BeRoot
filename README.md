@@ -465,20 +465,6 @@ Let's configure **port forwarding** on VirtualBox :
 Why 127.0.0.2 and not **localhost** (127.0.0.1) ?
 If you wanna use the localhost IP, you need to stop the service already running on the port 4242 on localhost, its been created by the staff. So we **should't miss** with it. Because of that we need to use another IP address for the host to connect remotely to our server using SSH service.
 
-### Connection commands
-
-We set everything we need to remotely use our server from the guest on the host OS.  
-
-To start a new session on host : `ssh <username>@<IpAddress> -p <port>`;
-	In my case : `ssh mzanana@127.0.0.2 -p 4242` 
-		
-To finish the session : `exit`.
-
-#### **The next part is optional because am crazy 🤪**
-
-What if we want to connect using the public key instead of putting the password everytime ?
-
-
   
 # > UFW
 

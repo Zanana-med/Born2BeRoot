@@ -290,7 +290,7 @@ Can be used nearly for every mount point **EXCEPT** `/boot`, because GRUB cannot
 Why LVM and not standard partitions ?  
 With LVM you can resize the volumes however you want, you can shrink the volume for the unused space, also growing the volume if you face the `space remaining` Linux message or just if you need to.  
 
->DON'T LET THIS PICTURE SCARE YOU BODY! BY THE END OF THIS CHAPTER YOU GONNA UNDERSTAND EVERYTHING I PROMISE.
+>DON'T LET THIS PICTURE SCARE YOU BUDDY! BY THE END OF THIS CHAPTER YOU GONNA UNDERSTAND EVERYTHING I PROMISE.
 
 <p align = "center">
 	<img src = "https://i.ibb.co/bgkZVyR/image.png" >
@@ -417,7 +417,7 @@ Before diving into the SSH commands, let's first understand how SSH works behind
 
 After a successful authentication, the SSH session is established and the communication is encrypted using the session key.  
 
-##### **Let's start now the SHH configuration**  
+##### **Let's start now the SSH configuration**  
 
 - We need first to update the package manager for the latest services updates : `apt update`  
 - Then to install the main tool for remote access with the SSH protocol using OpenSSH : `apt install openssh-server`  
@@ -445,7 +445,41 @@ To activate those changes we're going to restart the ssh service using the comma
 
 ![final ssh status after the port changing](https://i.ibb.co/2t3m2bL/Untddddditled-design.png)
 
+### Connect remotely using SSH
 
+By default the guest OS is totally isolated from the host OS, to connect remotely the guest OS we need a bridge that forward the traffic between the host and the guest OS. **Port Forwarding** do the exact thing by mapping a port on the host to a port on the guest.  
+**This is what happen :**  
++ Host receive SSH traffic on the 4242 port;
++ VirtualBox forward the traffic to the guest OS  4242 port.
+Let's configure **port forwarding** on VirtualBox : 
+
+<p align= "center">
+	<img src="https://i.ibb.co/fStbXZ5/dcc.png" width="600">
+</p>
+
+**Then create a new rule :**
+<p align= "center">
+	<img src="https://i.ibb.co/8BMc3g2/Screenshot-from-2024-12-18-15-15-32.png" width="400">
+</p>
+
+Why 127.0.0.2 and not **localhost** (127.0.0.1) ?
+If you wanna use the localhost IP, you need to stop the service already running on the port 4242 on localhost, its been created by the staff. So we **should't miss** with it. Because of that we need to use another IP address for the host to connect remotely to our server using SSH service.
+
+### Connection commands
+
+We set everything we need to remotely use our server from the guest on the host OS.  
+
+To start a new session on host : `ssh <username>@<IpAddress> -p <port>`;
+	In my case : `ssh mzanana@127.0.0.2 -p 4242` 
+		
+To finish the session : `exit`.
+
+#### **The next part is optional because am crazy 🤪**
+
+What if we want to connect using the public key instead of putting the password everytime ?
+
+
+  
 # > UFW
 
 
@@ -464,7 +498,7 @@ To make sure that everything worked fine, use the `chage -l <username>` command.
 ![chage -l \<usernme>](https://i.ibb.co/4pPZpts/password.png)
 
 **WHAT'S GOING ON ?? WHY OUR CHANGES ARE NOT APPLIED ???**   
-Relax buddy everything works perfectly as we want! Our changes are applied only for the new users, not to those who already exist on our system.
+Relax buddy! Everything works perfectly as we want! Our changes are applied only for the new users, not to those who already exist on our system.
 
 We need to configure the passwords of the `root` and `mzanana` users manually, by the help of `chage`  command again.
 

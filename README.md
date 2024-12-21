@@ -499,6 +499,13 @@ No password authentication for the `mzanana` user :
 
 Firewall is a security system control the incoming and outgoing network traffic, which is the data packets sent between devices over a network. Including various types of communications, such as web browsing, file transfers, SSH connection, etc. These packets are directed to a specific **ports** on your machine.  
 The firewall allow or block traffics based on ports, IP addresses or also the protocols. 
+
+# > UFW
+
+**UFW** stand for Uncomplicated Firewall. 
+UFW is a simplified front-end for managing firewall rules in Linux systems. By default, it denies  all the incoming connections unless the allowed ports.
+
+
 # > Password policy
 
 **Let's begin the configuration by those three requirements :**

@@ -505,6 +505,20 @@ The firewall allow or block traffics based on ports, IP addresses or also the pr
 **UFW** stand for Uncomplicated Firewall. 
 UFW is a simplified front-end for managing firewall rules in Linux systems. By default, it denies  all the incoming connections unless the allowed ports.
 
+**Commands time :**  
+
+\-> Check if **UFW** exist on the system : `ufw status`  
+<p align="center">
+	<img src="https://i.ibb.co/6R7WjRr/Uffffntitlddded-design.png" width="500">
+</p>
+\-> Enable the UFW service : `ufw enable`  
+<p align="center">
+	<img src="https://i.ibb.co/phwn4XN/Untitled-deffsign.png" width="500">
+</p>
+\-> Allow outgoing traffic and deny any incoming traffic  
+<p align="center">
+	<img src="https://i.ibb.co/LSZvWFv/Untitleddvgsgvs-design.png" width="400">
+</p>
 
 # > Password policy
 

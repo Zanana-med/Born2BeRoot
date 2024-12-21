@@ -519,6 +519,38 @@ UFW is a simplified front-end for managing firewall rules in Linux systems. By d
 <p align="center">
 	<img src="https://i.ibb.co/LSZvWFv/Untitleddvgsgvs-design.png" width="400">
 </p>
+\-> Kill the process running on port 68 
+<p align="center">
+	<img src="https://i.ibb.co/rcWWQ1L/image.png">
+</p>
+
+On page 9 of the Project PDF they don't have the udp process, so we need to kill that process from the system .  
+The process start automatically when the system boots up, so the idea is to kill the process using a **startup script** named `/etc/rc.local` that execute automatically commands or scripts when the system boots-up.
+
+**Set up `rc-local` service:**
+
+Using the `systemctl status rc-local` we notice that the service is dead :
+<p align="center">
+	<img src="https://i.ibb.co/2hK4Jsv/Untitled-dsssesign.png" width="450">
+</p>
+We need now to start the service and check again
+<p align="center">
+	<img src="https://i.ibb.co/WP6GbtV/acc.png" width="550">
+</p>
+As you see that there is a `condition failed` error because of the script `/etc/rc.local`is not found, so we need to create script named `/etc/rc.local` and include the script we want to execute when booting the machine, which is the `pkill -f dhclient` command that kill a process `dhclient` running on the system. After that give the file all the permissions, then restart the service using `systemctl restart rc-local` command 
+<p align="center">
+	<img src="https://i.ibb.co/fp5fLyR/Screenshot-from-2024-12-21-03-22-14.png" width="200">
+</p>
+<p align="center">
+	<img src="https://i.ibb.co/rfRw2bS/Untitleavrd-design.png" >
+</p>
+
+Now let's check again the `ss -tunlp` : 
+<p align="center">
+	<img src="https://i.ibb.co/ftwLqQG/Screenshot-from-2024-12-21-03-30-51.png">
+</p>
+**THE PROCESS IS KILLED SUCCESSFULLY!**
+
 
 # > Password policy
 

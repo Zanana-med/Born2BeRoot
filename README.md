@@ -11,7 +11,7 @@
 
 You wanna pass the 42 Born2BeRoot Project **DO YOU ??** 
 
-So we're going into the main PDF subject, and everytime we find a keyword or any scary word that we don't face everyday ! We gonna take our time to understand it and know how to work with it. Part per Part of the PDF until we finish the whole project ✅
+So we're going into the main PDF subject, and every time we find a keyword or any scary word that we don't face everyday ! We gonna take our time to understand it and know how to work with it. Part per Part of the PDF until we finish the whole project ✅
 
 # <u>Let's start !</u>
 
@@ -409,7 +409,7 @@ Before diving into the SSH commands, let's first understand how SSH works behind
 
 + **2- Server response :** The SSH Daemon (sshd) on the server listen for incoming connections on ssh port, after receiving the client packet the server send its identity via public key plus the supported encryption algorithms as part of the handshake;
 
-+ **3- Key exchange & Encryption setup :** The both server and client negotiate for a session key using key exchange algorithm, the client validate the server's public key to be sure of the right server, the client generate a session key and encrypt it using the public key of the server, the server now decrypts the session key using its private key , now both parties shared the same key session.   
++ **3- Key exchange & Encryption setup :** The both server and client negotiate for a session key using key exchange algorithm, the client validate the server's public key to be sure of the right server, the client generate a session key and encrypt it using the public key of the server, the server now decrypt the session key using its private key , now both parties shared the same key session.   
 
 + **4- Client Authentication :** 
 	+ **Password Authentication :** the client user provide a password and the server verifies the password against its local database;
@@ -495,9 +495,10 @@ No password authentication for the `mzanana` user :
 	<img src = "https://i.ibb.co/VBWHTYN/Screenshot-from-2024-12-19-14-13-48.png" width="500">
 </p>
 
-# > UFW
+# Firewall
 
-
+Firewall is a security system control the incoming and outgoing network traffic, which is the data packets sent between devices over a network. Including various types of communications, such as web browsing, file transfers, SSH connection, etc. These packets are directed to a specific **ports** on your machine.  
+The firewall allow or block traffics based on ports, IP addresses or also the protocols. 
 # > Password policy
 
 **Let's begin the configuration by those three requirements :**
@@ -525,7 +526,7 @@ We need to configure the passwords of the `root` and `mzanana` users manually, b
 ![10 characters, uper, lower, digit ...](https://i.ibb.co/1rtnfFf/Untddditled-design.png)
 
 
-For those advanced configurations and without using a package, we may need to make a script and call it everytime and that take us lot of time. Instead we gonna use a package to make our life easy.
+For those advanced configurations and without using a package, we may need to make a script and call it every time and that take us lot of time. Instead we gonna use a package to make our life easy.
 
 The package called `pam_pwquality` and we gonna install it using the command :
 

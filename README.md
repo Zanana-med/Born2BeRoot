@@ -1,4 +1,4 @@
-<h1 align = "center">Born2BeRoot</h1>
+	<h1 align = "center">Born2BeRoot</h1>
 
 <p align = "center">
 	<img src = "https://i.ibb.co/jh9jq5f/image.png"  width = "250">
@@ -659,3 +659,34 @@ TTY is a mode stand for Teletypewriter, in Linux every terminal session is assoc
 Simply by using the command `sudoreplay /var/log/sudo/00/00/0x`, and the x is the number of the `sudo` command executed.
 
 
+# Script
+
+![Script part](https://i.ibb.co/h1n0HcR/Screenshot-from-2024-12-22-09-22-31.png)
+
+![Script part](https://i.ibb.co/M54K4RQ/Screenshot-from-2024-12-22-09-24-16.png)
+
+What is a **script** ?  
+Script is a file containing a sequence of commands or instructions written in a scripting language (bash in our case). The script help to automate tasks, configure systems or interact with applications and OS.
+
+### 1. Architecture
+
+### 2. CPU physical
+### 3. vCPU
+
+### 4. Memory Usage
+
+### 5. Disk Usage
+
+### 6. CPU load
+
+### 7. Last boot
+
+### 8. LVM use
+
+### 9. Connections TCP
+
+### 10. User log
+
+### 11. Network
+
+### 12. Sudo

@@ -507,19 +507,16 @@ UFW is a simplified front-end for managing firewall rules in Linux systems. By d
 
 **Commands time :**  
 
-\-> Check if **UFW** exist on the system : `ufw status`  
+-> Check if **UFW** exist on the system : `ufw status`  
 <p align="center">
 	<img src="https://i.ibb.co/6R7WjRr/Uffffntitlddded-design.png" width="500">
 </p>
-\-> Enable the UFW service : `ufw enable`  
+-> Enable the UFW service : `ufw enable`  
 <p align="center">
 	<img src="https://i.ibb.co/phwn4XN/Untitled-deffsign.png" width="500">
 </p>
-\-> Allow outgoing traffic and deny any incoming traffic  
-<p align="center">
-	<img src="https://i.ibb.co/LSZvWFv/Untitleddvgsgvs-design.png" width="400">
-</p>
-\-> Kill the process running on port 68 
+
+-> Kill the process running on port 68 
 <p align="center">
 	<img src="https://i.ibb.co/rcWWQ1L/image.png">
 </p>
@@ -551,7 +548,25 @@ Now let's check again the `ss -tunlp` :
 </p>
 **THE PROCESS IS KILLED SUCCESSFULLY!**
 
+->The best thing you can do now remove the ufw and reinstall it again, if the port 68 still exist just delete it using the `ufw delete X` command (`X` is the line number of the port 68.  
+//TODO : When configuring again capture this ufw delete step!
 
+Let's remove completely the **ufw** service :
+<p align="center">
+	<img src="https://i.ibb.co/jRftWsj/Untitled-designdddd.png">
+</p>
+Delete the folder of the ufw that still exist on `/etc/ufw` and install ufw again :
+<p align="center">
+	<img src="https://i.ibb.co/WfhxXd5/Untitlffffed-design.png">
+</p>
+Enable the **ufw** service and allow only the port 4242 :
+<p align="center">
+	<img src="https://i.ibb.co/9nR5wFJ/Untitledfff-design.png" width = "500">
+</p>
+Allow outgoing traffic and deny any incoming traffic  
+<p align="center">
+	<img src="https://i.ibb.co/LSZvWFv/Untitleddvgsgvs-design.png" width="400">
+</p>
 # > Password policy
 
 **Let's begin the configuration by those three requirements :**

@@ -716,6 +716,21 @@ When you configure 10 vCPUs in a VM, the hypervisor assign 10 **threads** from t
 
 #### 4. Memory Usage (RAM)
 
+Let's give a look to the **awk** :  
+**awk** is a powerful text-processing tool operate line by line that allow you to manipulate and analyse text data in a flexible way.  
+Basic Syntax : `awk 'pattern { action }' file`  
++ `Pattern` is a condition that determines whether to process the current line;
++ If no pattern is provided, the action applied on all lines;
++ `Action` is a set of instructions to execute when the pattern matches;
++ If no action is provided, matching lines are printed.
+
+**awk** fields and records :  
++ `Record` in awk is a line of text;
++ `Field` is a column within a record deliminer by space or tab;
++ `$1`, `$2`, ..., `$NF` represent the first, second, ..., and last field in a line;
++ `$0` represents the entire line.
+
+
 #### 5. Disk Usage
 
 #### 6. CPU load

@@ -643,8 +643,9 @@ BUT WHAT IS A **SUDOER FILE ?**
 
 Let's edit the sudoers file using the command `visudo` to configure our **sudo group** :
 
-<img src="https://i.ibb.co/j61ntYQ/image.png" width = "500">
-
+<p align="center">
+	<img src="https://i.ibb.co/j61ntYQ/image.png" width = "400">
+</p>
 🔴 Total tries for the user to enter the right password ;  
 🟠 The custom message appear when the password is incorrect ;  
 🟡 Active the logs for the input commands from the user ;  
@@ -668,25 +669,41 @@ Simply by using the command `sudoreplay /var/log/sudo/00/00/0x`, and the x is th
 What is a **script** ?  
 Script is a file containing a sequence of commands or instructions written in a scripting language (bash in our case). The script help to automate tasks, configure systems or interact with applications and OS.
 
-### 1. Architecture
+#### 1. Architecture
 
-### 2. CPU physical
-### 3. vCPU
+Architecture refers to the structure of the computer's processor and the operating system that runs on it, of course details about the kernel. 
 
-### 4. Memory Usage
+-> Command : `uname -a`  
 
-### 5. Disk Usage
+This command prints system information
+![uname -a](https://i.ibb.co/dQDvZq9/Screenshot-from-2024-12-22-09-32-42.png)
 
-### 6. CPU load
+#### 2. Physical CPU
 
-### 7. Last boot
+**CPU, core and thread ?**
++ **CPU :** The brain of the computer, CPU which execute programs and handles data by performing operations as addition, comparison, etc;
++ **Core :** Single independent processing unit withing the CPU, each core execute its own instructions independently. Processors today often multiple cores to handle multiple tasks at the same time;
++ **Thread :** Represent a single task or process being executed by a core, nowadays a single core handle multiple threads at the same time.
+<p align="center">
+	<img src="https://i.ibb.co/VHSTN0j/2.jpg" width = "500">
+</p>
 
-### 8. LVM use
+#### 3. Virtual CPU
 
-### 9. Connections TCP
+#### 4. Memory Usage
 
-### 10. User log
+#### 5. Disk Usage
 
-### 11. Network
+#### 6. CPU load
 
-### 12. Sudo
+#### 7. Last boot
+
+#### 8. LVM use
+
+#### 9. Connections TCP
+
+#### 10. User log
+
+#### 11. Network
+
+#### 12. Sudo

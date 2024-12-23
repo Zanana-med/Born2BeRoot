@@ -511,6 +511,7 @@ UFW is a simplified front-end for managing firewall rules in Linux systems. By d
 <p align="center">
 	<img src="https://i.ibb.co/6R7WjRr/Uffffntitlddded-design.png" width="500">
 </p>
+
 -> Enable the UFW service : `ufw enable`  
 <p align="center">
 	<img src="https://i.ibb.co/phwn4XN/Untitled-deffsign.png" width="500">
@@ -530,14 +531,17 @@ Using the `systemctl status rc-local` we notice that the service is dead :
 <p align="center">
 	<img src="https://i.ibb.co/2hK4Jsv/Untitled-dsssesign.png" width="450">
 </p>
+
 We need now to start the service and check again
 <p align="center">
 	<img src="https://i.ibb.co/WP6GbtV/acc.png" width="550">
 </p>
+
 As you see that there is a `condition failed` error because of the script `/etc/rc.local`is not found, so we need to create script named `/etc/rc.local` and include the script we want to execute when booting the machine, which is the `pkill -f dhclient` command that kill a process `dhclient` running on the system. After that give the file all the permissions, then restart the service using `systemctl restart rc-local` command 
 <p align="center">
 	<img src="https://i.ibb.co/fp5fLyR/Screenshot-from-2024-12-21-03-22-14.png" width="200">
 </p>
+
 <p align="center">
 	<img src="https://i.ibb.co/rfRw2bS/Untitleavrd-design.png" >
 </p>
@@ -546,6 +550,7 @@ Now let's check again the `ss -tunlp` :
 <p align="center">
 	<img src="https://i.ibb.co/ftwLqQG/Screenshot-from-2024-12-21-03-30-51.png">
 </p>
+
 **THE PROCESS IS KILLED SUCCESSFULLY!**
 
 ->The best thing you can do now remove the ufw and reinstall it again, if the port 68 still exist just delete it using the `ufw delete X` command (`X` is the line number of the port 68.  
@@ -555,18 +560,22 @@ Let's remove completely the **ufw** service :
 <p align="center">
 	<img src="https://i.ibb.co/jRftWsj/Untitled-designdddd.png">
 </p>
+
 Delete the folder of the ufw that still exist on `/etc/ufw` and install ufw again :
 <p align="center">
 	<img src="https://i.ibb.co/WfhxXd5/Untitlffffed-design.png">
 </p>
+
 Enable the **ufw** service and allow only the port 4242 :
 <p align="center">
 	<img src="https://i.ibb.co/9nR5wFJ/Untitledfff-design.png" width = "500">
 </p>
+
 Allow outgoing traffic and deny any incoming traffic  
 <p align="center">
 	<img src="https://i.ibb.co/LSZvWFv/Untitleddvgsgvs-design.png" width="400">
 </p>
+
 # > Password policy
 
 **Let's begin the configuration by those three requirements :**
@@ -593,7 +602,6 @@ We need to configure the passwords of the `root` and `mzanana` users manually, b
 
 ![10 characters, uper, lower, digit ...](https://i.ibb.co/1rtnfFf/Untddditled-design.png)
 
-
 For those advanced configurations and without using a package, we may need to make a script and call it every time and that take us lot of time. Instead we gonna use a package to make our life easy.
 
 The package called `pam_pwquality` and we gonna install it using the command :
@@ -601,6 +609,7 @@ The package called `pam_pwquality` and we gonna install it using the command :
 <p align = "center">
 	<img src = "https://i.ibb.co/0QTYWnn/libpam.png" width ="500">
 </p>
+
 The package now is installed! To use it we gonna edit the file `/etc/pam.d/common-password` :
 
 ![](https://i.ibb.co/SPztGRB/image.png)
@@ -632,6 +641,7 @@ The explanation of each option :
 </p>
 
 # Sudo group Configuration
+
 <p align = "center">
 	<img src ="https://i.ibb.co/k8WR09Y/Screenshot-from-2024-12-11-07-09-55.png" width ="500">
 </p>
@@ -646,6 +656,7 @@ Let's edit the sudoers file using the command `visudo` to configure our **sudo g
 <p align="center">
 	<img src="https://i.ibb.co/j61ntYQ/image.png" width = "400">
 </p>
+
 🔴 Total tries for the user to enter the right password ;  
 🟠 The custom message appear when the password is incorrect ;  
 🟡 Active the logs for the input commands from the user ;  
@@ -671,26 +682,39 @@ Script is a file containing a sequence of commands or instructions written in a 
 
 #### 1. Architecture
 
-Architecture refers to the structure of the computer's processor and the operating system that runs on it, of course details about the kernel. 
+OS architecture refers to the structure of the computer's processor and the operating system that runs on it, of course details about the kernel. 
 
--> Command : `uname -a`  
-
-This command prints system information
+-> Command to prints system information : `uname -a`  
+ 
 ![uname -a](https://i.ibb.co/dQDvZq9/Screenshot-from-2024-12-22-09-32-42.png)
 
-#### 2. Physical CPU
+#### 2. Physical Processor
 
 **CPU, core and thread ?**
 + **CPU :** The brain of the computer, CPU which execute programs and handles data by performing operations as addition, comparison, etc;
 + **Core :** Single independent processing unit withing the CPU, each core execute its own instructions independently. Processors today often multiple cores to handle multiple tasks at the same time;
-+ **Thread :** Represent a single task or process being executed by a core, nowadays a single core handle multiple threads at the same time.
++ **Thread :** Is a virtual execution unit within a core, each thread can handle a separate stream of instructions, and a core can handle multiple threads at the same time.
+
 <p align="center">
 	<img src="https://i.ibb.co/VHSTN0j/2.jpg" width = "500">
 </p>
 
-#### 3. Virtual CPU
+**Physical  Processor** refers to the actual physical CPU installed on the host machine, the physical processor contain the cores and threads. All the information about the CPU exist on the file `/proc/cpuinfo`   
 
-#### 4. Memory Usage
+-> Command for the number of physical processors : `grep "physical id" /proc/cpuinfo | uniq | wc -l`   
+<p align="center">
+	<img src="https://i.ibb.co/By3fnHf/Screenshot-from-2024-12-23-15-53-40.png" >
+</p>
+
+#### 3. Virtual Processor
+
+Virtual Processor is a logical representation of a CPU core that is presented to a virtual machine by the hypervisor. The hypervisor create vCPUs for the VMs and translate their instructions into operations on the host CPU.  
+When you configure 10 vCPUs in a VM, the hypervisor assign 10 **threads** from the physical hardware to the VM. So each vCPU corresponds to a **thread** on the host's physical CPU.
+<p align="center">
+	<img src="https://i.ibb.co/sv4MCW3/Screenshot-from-2024-12-23-15-54-52.png" >
+</p>
+
+#### 4. Memory Usage (RAM)
 
 #### 5. Disk Usage
 

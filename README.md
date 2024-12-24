@@ -730,6 +730,16 @@ Basic Syntax : `awk 'pattern { action }' file`
 + `$1`, `$2`, ..., `$NF` represent the first, second, ..., and last field in a line;
 + `$0` represents the entire line.
 
+Command for The current **available RAM :** `free --mega | awk ' /^Mem:/ {print $3} '`  
+<p align="center">
+	<img src="https://i.ibb.co/SyLh4GC/Untitledvwev-design.png" >
+</p>
+
+Command for the **RAM utilization rate** as percentage :   So we gonna use the available RAM divided by the total memory  
+`free --mega | awk ' /^Mem:/ {printf("%.2f\n", ($3/$2)*100)}'`
+<p align="center">
+	<img src="https://i.ibb.co/x2rKb9Z/Untitlerrrrrrrrrd-design.png" >
+</p>
 
 #### 5. Disk Usage
 

@@ -743,6 +743,21 @@ Command for the **RAM utilization rate** as percentage :   So we gonna use the a
 
 #### 5. Disk Usage
 
+`df` command, also known as the disk free. Contain information about the file system disk space usage on the mounted file system.
+<p align="center">
+	<img src="https://i.ibb.co/0Vd7qBz/eeeeeeee.png" >
+</p>
+Command for available memory on your server :   
+We want the data on MB, so we'll use the `-m` flag, for the entire server using the `--total` flag.  
+`df -m --total | awk '$1 == "total" {print $3} '`
+<p align="center">
+	<img src="https://i.ibb.co/h1P4y1D/Screenshot-from-2024-12-24-10-07-40.png" >
+</p>
+For the disk utilization rate we divide the available disk to the total disk storage, using the command : `df -m --total | awk '$1 == "total" {printf("%d/%dGb (%.2f%%)\n", $4, $2, $4/$2*100)}'`
+<p align="center">
+	<img src="https://i.ibb.co/7QYKjMF/Screenshot-from-2024-12-24-10-13-25.png" >
+</p>
+
 #### 6. CPU load
 
 #### 7. Last boot

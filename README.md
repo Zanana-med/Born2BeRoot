@@ -819,6 +819,20 @@ The final command : `ss -ta | grep ESTAB | wc -l`
 
 #### 10. Users number
 
+We have to get the number of the users currently using the server.
+
+Before remotely connecting `mzanana` user using ssh :
+<p align="center">
+	<img src="https://i.ibb.co/Db7ktkR/Screenshot-from-2024-12-25-18-47-58.png" width="300">
+</p>  
+
+After connecting `mzanana` 
+<p align="center">
+	<img src="https://i.ibb.co/5M720Bs/Screenshot-from-2024-12-25-18-48-38.png" width="350">
+</p>  
+
+The final command is : `users | wc -w`
+
 #### 11. Network
 
 #### 12. Sudo

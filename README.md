@@ -767,6 +767,25 @@ For the disk utilization rate we divide the available disk to the total disk sto
 
 #### 6. CPU load
 
+The command we will use is `top`, which is used to display Linux processes. It provides a dynamic, real-time view of the running system.  
+`top -bn1 | grep Cpu`:
+
+- The `-n1` flag stops the command after one iteration.
+- The `-b` flag runs `top` in batch mode, producing plain-text output.
+
+Let’s see the usage of `-b` flag :
+
+![Why using -b flag](https://i.ibb.co/1q5YjNx/Untitled-dcdscesign.png)
+
+The full **CPU Load** Command :
+
+`gsub` function used on the next command 
+![the final command](https://i.ibb.co/kqDSmpP/Untitletsbd-design.png)
+
+The final command: `top -bn1 | grep Cpu | awk '{gsub(",", " "); print 100-$8}'`
+
+Why `100-$8`?  
+The `$8` field represents the idle CPU time, which is the percentage of time the CPU spends doing nothing (unused percentage). By subtracting `$8` from 100, we calculate the percentage of CPU being actively used on the server.
 
 #### 7. Last boot
 

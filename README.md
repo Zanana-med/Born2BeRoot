@@ -789,6 +789,15 @@ The `$8` field represents the idle CPU time, which is the percentage of time the
 
 #### 7. Last boot
 
+To get the date and time of the last reboot we gonna use the `who` command .
+<p align="center">
+	<img src="https://i.ibb.co/BfNGmP7/who-design.png" width="550">
+</p>
+The final command : `who -b | awk '{print $3 " " $4}'`
+<p align="center">
+	<img src="https://i.ibb.co/CJv9F14/Uregrntitled-design.png" width="500">
+</p>
+
 #### 8. LVM use
 
 #### 9. Connections TCP

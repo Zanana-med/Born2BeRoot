@@ -793,6 +793,7 @@ To get the date and time of the last reboot we gonna use the `who` command .
 <p align="center">
 	<img src="https://i.ibb.co/BfNGmP7/who-design.png" width="550">
 </p>
+
 The final command : `who -b | awk '{print $3 " " $4}'`
 <p align="center">
 	<img src="https://i.ibb.co/CJv9F14/Uregrntitled-design.png" width="500">
@@ -808,8 +809,15 @@ So the final command is : `lsblk | grep -q && echo "yes" || echo "no"`
 
 #### 9. Connections TCP
 
+To check the active connection, we mean we gonna find out how much Established connection used by TCP.  
+`ss` command stand for `socket statistics` used to display the network statistics .
+The final command : `ss -ta | grep ESTAB | wc -l`
++ `t` : Display the TCP connections;
++ `a` Display all the connection state whatever if LISTEN, ESTAB, UNCONN, etc.
 
-#### 10. User log
+![TCP connections](https://i.ibb.co/ry3s2J8/aeveva.png)
+
+#### 10. Users number
 
 #### 11. Network
 

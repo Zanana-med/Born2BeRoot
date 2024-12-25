@@ -850,3 +850,25 @@ The command : `journalctl _COMM=sudo | grep COMMAND | wc -l`
 + `journalctl` includes **all attempts** to use `sudo` (whether successful or not).
 + `grep COMMAND` ensure to count just the executed `sudo` commands, not failed attempts. 
 
+## The final script / Cron
+
+![](https://i.ibb.co/bmFX34K/Screenshot-from-2024-12-25-22-01-19.png)
+
+![](https://i.ibb.co/5YwQQLV/Screenshot-from-2024-12-25-22-03-30.png)
+
+
+#### wall
+
+**wall** command in Linux  system used to display a message to all the users of the server.  
+To remove the header : `wall -n "Please update the service X!"`  
+In our case we gonna use the **wall** command inside a script which gonna applied by the cron. **But what is CRON ?**  
+
+#### Cron 
+
+If you want a job or work to be scheduled on your **Linux OS**, the **crontab** command will be a popular one.  
++ **cron** is the name of the tool;
++ **crontab** is the file name where the instructions and jobs exist to be schedule and executed by cron.
+
+#### Final script
+
+![The final script](https://i.ibb.co/dBQ5xhk/image.png)

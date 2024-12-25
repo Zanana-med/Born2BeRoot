@@ -760,6 +760,15 @@ For the disk utilization rate we divide the available disk to the total disk sto
 
 #### 6. CPU load
 
+The command we gonna use is `top` which used to show the Linux processes. It provide dynamic real-time view of the running system.  
+`top -bn1 | grep Cpu` : The `n1` flag stop the command in one iteration, `b` flag run `top` on bash mode as a plaint -text format . Let's see the difference :
+
+![](https://i.ibb.co/1q5YjNx/Untitled-dcdscesign.png)
+
+The full **CPU Load** Command :
+
+`gsub` function used on the next command 
+![](https://i.ibb.co/HY58bmx/Untitled-dedvvsign.png)
 #### 7. Last boot
 
 #### 8. LVM use

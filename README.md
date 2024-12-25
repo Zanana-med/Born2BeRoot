@@ -843,3 +843,10 @@ MAC command : `ip link | grep ether | awk '{print $2}'`
 </p>
 
 #### 12. Sudo
+
+![Sudo logs](https://i.ibb.co/59kfPXp/Screenshot-from-2024-12-25-21-48-18.png)
+
+The command : `journalctl _COMM=sudo | grep COMMAND | wc -l`  
++ `journalctl` includes **all attempts** to use `sudo` (whether successful or not).
++ `grep COMMAND` ensure to count just the executed `sudo` commands, not failed attempts. 
+

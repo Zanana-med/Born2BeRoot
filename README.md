@@ -800,6 +800,12 @@ The final command : `who -b | awk '{print $3 " " $4}'`
 
 #### 8. LVM use
 
+![lvm command](https://i.ibb.co/Rv2bxNw/Screenshot-from-2024-12-25-17-45-53.png)
+
++ `grep -q` run the command in silence without displaying the regular output;
++ `&& --A-- || --B--` This command check if the command `grep -g lvm` return  `1` then it applies the `A` part, otherwise it applies the `B` part.  
+So the final command is : `lsblk | grep -q && echo "yes" || echo "no"`  
+
 #### 9. Connections TCP
 
 

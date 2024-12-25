@@ -1,4 +1,4 @@
-	<h1 align = "center">Born2BeRoot</h1>
+<h1 align = "center">Born2BeRoot</h1>
 
 <p align = "center">
 	<img src = "https://i.ibb.co/jh9jq5f/image.png"  width = "250">
@@ -834,5 +834,12 @@ After connecting `mzanana`
 The final command is : `users | wc -w`
 
 #### 11. Network
+
+Let's get the IP and the MAC of the server.  
+IP command : `hostname -I`   
+MAC command : `ip link | grep ether | awk '{print $2}'`  
+<p align="center">
+	<img src="https://i.ibb.co/58Lft6G/Ip-Adr.png" width="550">
+</p>
 
 #### 12. Sudo

@@ -863,12 +863,40 @@ The command : `journalctl _COMM=sudo | grep COMMAND | wc -l`
 To remove the header : `wall -n "Please update the service X!"`  
 In our case we gonna use the **wall** command inside a script which gonna applied by the cron. **But what is CRON ?**  
 
+#### Final script
+
+We're gonna create the script `monitoring.sh` on `/root`  (choose any directory you want)
+![The final script](https://i.ibb.co/dBQ5xhk/image.png)
+
 #### Cron 
 
 If you want a job or work to be scheduled on your **Linux OS**, the **crontab** command will be a popular one.  
 + **cron** is the name of the tool;
 + **crontab** is the file name where the instructions and jobs exist to be schedule and executed by cron.
 
-#### Final script
+![cron status](https://i.ibb.co/XWhwB8F/Screenshot-from-2024-12-26-00-55-55.png)
 
-![The final script](https://i.ibb.co/dBQ5xhk/image.png)
+`crontab -e` to edit the crontab  file 
+At the bottom of the file you gonna find the next highlighted line
+
+![crontab file](https://i.ibb.co/xLsBDX8/Uncacvtitled-design.png)
+
+`m` : Specifies the minute when the command will run, ranges 0 => 59;
+`h` : Which hour of the day the command gonna schedule to execute, ranges 0 => 23;
+`dom` : Day Of Month, range 1 => 31
+`mon` : Month, range 1 => 12
+`dow` : Day Of Week range 0 => 7 (0 and 7 represent sunday)
+
+You can check and test them by yourself using the original link of a tool [crontab.guru](https://crontab.guru/)
+
+Example from the [Website](https://crontab.guru/)
+<p align = "center">
+	<img src= "https://i.ibb.co/gdpnvN8/Untitlqgfrged-design.png" width ="500">
+</p>
+
+
+**BUT !!!!**
+In our case we're not gonna use this type, because they told us on the subject every 10 minutes from  server startup
+
+![at startup](https://i.ibb.co/JdkGv4P/Screenshot-from-2024-12-26-01-41-32.png)
+

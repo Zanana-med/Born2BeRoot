@@ -899,7 +899,18 @@ Example from the [Website](https://crontab.guru/)
 
 #### The method we gonna use
 
-In our case we're not gonna use the last method, because they ask us on the subject to schedule the script every 10 minutes from **server startup**
+We're not gonna use the last method, because they ask us on the subject to schedule the script every 10 minutes from **server startup**
 
 ![at startup](https://i.ibb.co/JdkGv4P/Screenshot-from-2024-12-26-01-41-32.png)
+
+In our case we gonna work with a loop inside the script which execute the script every 10 minutes (600 second). Here is a template : `while true; do ... sleep 600 done` 
+The script gonna be 
+![](https://i.ibb.co/RzBbZK2/codeimage-snippet-26.png)
+
+On the crontab file we gonna add the command `@reboot /PathToScript/monitoring.sh &`  
++ `@reboot` Ensure the command start every time the system boots;
++ `&` At the end of the line ensuring that the script runs on background to not disturb another process, so you still use your terminal or another processes while the script continues to run.
+<p align ="center">
+   <img src="https://i.ibb.co/s25mdDK/Screenshot-from-2024-12-26-10-40-00.png" width ="350">
+</p>
 

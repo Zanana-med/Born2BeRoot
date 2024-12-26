@@ -877,7 +877,10 @@ If you want a job or work to be scheduled on your **Linux OS**, the **crontab** 
 ![cron status](https://i.ibb.co/XWhwB8F/Screenshot-from-2024-12-26-00-55-55.png)
 
 `crontab -e` to edit the crontab  file 
-At the bottom of the file you gonna find the next highlighted line
+
+We're not gonna use the next configuration in our subject, I explain it because it can help you later. in our case we gonna use another method explained after this part.
+
+At the bottom of the `crontab` file you gonna find the next highlighted line
 
 ![crontab file](https://i.ibb.co/xLsBDX8/Uncacvtitled-design.png)
 
@@ -894,9 +897,9 @@ Example from the [Website](https://crontab.guru/)
 	<img src= "https://i.ibb.co/gdpnvN8/Untitlqgfrged-design.png" width ="500">
 </p>
 
+#### The method we gonna use
 
-**BUT !!!!**
-In our case we're not gonna use this type, because they told us on the subject every 10 minutes from  server startup
+In our case we're not gonna use the last method, because they ask us on the subject to schedule the script every 10 minutes from **server startup**
 
 ![at startup](https://i.ibb.co/JdkGv4P/Screenshot-from-2024-12-26-01-41-32.png)
 

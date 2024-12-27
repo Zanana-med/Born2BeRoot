@@ -4,6 +4,7 @@
 	<img src = "https://i.ibb.co/jh9jq5f/image.png"  width = "250">
 </p>
 
+
 ## How this article gonna help !
 
 
@@ -915,4 +916,6 @@ the final result of the `lsblk` command should be :
 + **PHP :**
 
 
-![Visitor Count](https://profile-counter.glitch.me/zanana-med/count.svg)
+
+
+<h4 align="center"><b>Repo Viewers</b><br><img src="https://profile-counter.glitch.me/zanana-med-Born2BeRoot/count.svg"></h4>

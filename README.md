@@ -866,7 +866,7 @@ In our case we gonna use the **wall** command inside a script which gonna applie
 #### Final script
 
 We're gonna create the script `monitoring.sh` on `/root`  (choose any directory you want)
-![The final script](https://i.ibb.co/dBQ5xhk/image.png)
+![The final script](https://i.ibb.co/CV90X86/codeimage-snfippet-27.png)
 
 #### Cron 
 
@@ -878,34 +878,13 @@ If you want a job or work to be scheduled on your **Linux OS**, the **crontab** 
 
 `crontab -e` to edit the crontab  file 
 
-We're not gonna use the next configuration in our subject, I explain it because it can help you later. in our case we gonna use another method explained after this part.
-
-At the bottom of the `crontab` file you gonna find the next highlighted line
-
-![crontab file](https://i.ibb.co/xLsBDX8/Uncacvtitled-design.png)
-
-`m` : Specifies the minute when the command will run, ranges 0 => 59;
-`h` : Which hour of the day the command gonna schedule to execute, ranges 0 => 23;
-`dom` : Day Of Month, range 1 => 31
-`mon` : Month, range 1 => 12
-`dow` : Day Of Week range 0 => 7 (0 and 7 represent sunday)
-
-You can check and test them by yourself using the original link of a tool [crontab.guru](https://crontab.guru/)
-
-Example from the [Website](https://crontab.guru/)
-<p align = "center">
-	<img src= "https://i.ibb.co/gdpnvN8/Untitlqgfrged-design.png" width ="500">
-</p>
-
-#### The method we gonna use
-
-We're not gonna use the last method, because they ask us on the subject to schedule the script every 10 minutes from **server startup**
+They ask us on the subject to schedule the script every 10 minutes from **server startup**
 
 ![at startup](https://i.ibb.co/JdkGv4P/Screenshot-from-2024-12-26-01-41-32.png)
 
-In our case we gonna work with a loop inside the script which execute the script every 10 minutes (600 second). Here is a template : `while true; do ... sleep 600 done` 
-The script gonna be 
-![](https://i.ibb.co/RzBbZK2/codeimage-snippet-26.png)
+In our case we gonna use a loop inside the script which execute the script every 10 minutes (600 second). Here is a template : `while true; do ... sleep 600 done` 
+The script gonna be
+![](https://i.ibb.co/31scDLL/codeimage-snippet-27.png)
 
 On the crontab file we gonna add the command `@reboot /PathToScript/monitoring.sh &`  
 + `@reboot` Ensure the command start every time the system boots;
@@ -914,3 +893,23 @@ On the crontab file we gonna add the command `@reboot /PathToScript/monitoring.s
    <img src="https://i.ibb.co/s25mdDK/Screenshot-from-2024-12-26-10-40-00.png" width ="350">
 </p>
 
+The Final Results : 
+
+![](https://i.ibb.co/pzYW6Qv/image.png)
+
+
+# BONUS
+
+## 1- Partitioning 
+
+For this part I suggest to watch the guide on YouTube : [B2BR : Installing and Partitioning](https://www.youtube.com/watch?v=jxReupv7UOo&ab_channel=Iv%C3%A1nAgudoD%C3%ADaz)
+
+the final result of the `lsblk` command should be :
+![Lsblk Bonus]()
+## 2- Website
+![Wordpress website](https://i.ibb.co/KW0qBsH/Screenshot-from-2024-12-26-11-22-43.png)
+
++ **Wordpress :**
++ **Lighttpd :**
++ **Maria-DB :**
++ **PHP :**

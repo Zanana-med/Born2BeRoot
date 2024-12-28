@@ -517,8 +517,9 @@ UFW is a simplified front-end for managing firewall rules in Linux systems. By d
 <p align="center">
 	<img src="https://i.ibb.co/phwn4XN/Untitled-deffsign.png" width="500">
 </p>
+#### IF You planned to Do the BONUS jump the next part !
 
--> Kill the process running on port 68 
+If you gonna do just the Mandatory part you need to kill the process running on port 68 as asked on the subject 
 <p align="center">
 	<img src="https://i.ibb.co/rcWWQ1L/image.png">
 </p>
@@ -905,7 +906,7 @@ The Final Results :
 
 For this part I suggest to watch the guide on YouTube : [B2BR : Installing and Partitioning](https://www.youtube.com/watch?v=jxReupv7UOo&ab_channel=Iv%C3%A1nAgudoD%C3%ADaz)
 
-the final result of the `lsblk` command should be :
+The final result of the `lsblk` command should be :
 <img src="https://i.ibb.co/Fqbp8yn/image.png" width="450" >
 ## 2- Website
 ![Wordpress website](https://i.ibb.co/KW0qBsH/Screenshot-from-2024-12-26-11-22-43.png)
@@ -921,6 +922,33 @@ the final result of the `lsblk` command should be :
 + **Wordpress :** Is a content management system. It simplifies website creation by providing pre-built template and plugins without needing to write much code..
 
 
+#### Install Lighttpd
+
+Before installing the service let's be sure to have the latest updates of the apt package manager.
+<p align="center">
+	<img src="https://i.ibb.co/N6v6mYz/Screenshot-from-2024-12-28-02-17-28.png" width="550">
+</p>  
+<p align="center">
+	<img src="https://i.ibb.co/0VfZMxf/Screenshot-from-2024-12-28-02-17-41.png" width="350">
+</p>  
+
+ Then we gonna use the command `apt install lighttpd`
+<p align="center">
+	<img src="https://i.ibb.co/pwMc37J/Screenshot-from-2024-12-28-02-18-10.png" width="350">
+</p>  
+
+We need to allow the port 80
+<p align="center">
+	<img src="https://i.ibb.co/KhpQ9mZ/Untitled-deaevetbsign.png" width="450">
+</p>  
+
+**But why we kept port 80 open?**  
+Lighttpd is a web server that needs to **listen** for incoming HTTP requests. When someone type a website URL (http://*** ) in the browser, their browser automatically tries to connect to **port 80** on the server. if the port is closed then the request won't reach the server.
+
+Now we need to configure the port forwarding for the port 80 also
+<p align="center">
+	<img src="https://i.ibb.co/Zdx9S2P/Screenshot-from-2024-12-28-02-36-40.png" width="450">
+</p> 
 
 
 <h4 align="center"><b>Repo Viewers</b><br><img src="https://profile-counter.glitch.me/zanana-med-Born2BeRoot/count.svg"></h4>

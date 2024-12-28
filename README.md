@@ -1005,9 +1005,10 @@ Then just make those changes
 - Reload privilege tables now? → `Y`
 
 You get at the end this message 
-<div style="text-align: center;">
+<center>
 	<img src="https://i.ibb.co/C5yYwnp/Screenshot-from-2024-12-28-03-46-56.png" width="550">
-</div>
+</center>
+
 
 
 

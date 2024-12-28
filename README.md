@@ -951,4 +951,49 @@ Now we need to configure the port forwarding for the port 80 also
 </p> 
 
 
+#### Install Wordpress
+
+To install the **latest** English version of Wordpress we must install **wget** and **zip**.  
+\- **wget :** Tool to download files from internet (in pur case to download Wordpress);
+\- **zip :** Utility for compressing and decompressing files in ZIP format (in our case to unzip the wget zip of the Wordpress)
+<p align="center">
+	<img src="https://i.ibb.co/x65VBmV/Screenshot-from-2024-12-28-02-42-16.png" width="450">
+</p> 
+
+So we gonna change the directory to `/var/www/` and use the command to install the zip file of Wordpress : `wget https://en-gb.wordpress.org/latest-en_GB.zip`
+
+![Zip file of Wordpress](https://i.ibb.co/F8H4FCd/Screenshot-from-2024-12-28-02-47-44.png)
+
+
+
+Let's unzip the file
+<p align="center">
+	<img src="https://i.ibb.co/YPnb7Rh/Screenshot-from-2024-12-28-03-01-12.png" width="450">
+</p> 
+
+We need to pass now by 3 steps : 
+
+- **`html` into `html_old` :** The `html` folder is the default directory where it looks for files to serve to users when they visit your website. For backup purpose we gonna rename the existing folder `html` to `html_old` to ensure you don't lose existing web files that were in the `html` folder before replacing them with the Wordpress files.
+
+- **`Wordpress` into `html` :** The Lighttpd is configured look for files in the `html` folder by default. We need to rename the `wordpress` folder that contain the Wordpress core files needed to run your website, change it to `html` named folder so the Lighttpd can access the right folder which contain our website files.  
+
+- **Set permissions for the `html` folder :** Giving the root all the access to read, write and execute files in the `html` folder. But for groups and other just to read and execute. and the `-R` flag ensure all files and subdirectories within `html` folder have the same permissions.
+<p align="center">
+	<img src="https://i.ibb.co/4RjGtg6/Screenshot-from-2024-12-28-03-03-50.png" width="400">
+</p> 
+
+#### Install MariaDB
+
+
+
+
+
+
+
+
+
+
+
+
+
 <h4 align="center"><b>Repo Viewers</b><br><img src="https://profile-counter.glitch.me/zanana-med-Born2BeRoot/count.svg"></h4>

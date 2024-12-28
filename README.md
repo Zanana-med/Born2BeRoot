@@ -906,7 +906,7 @@ The Final Results :
 For this part I suggest to watch the guide on YouTube : [B2BR : Installing and Partitioning](https://www.youtube.com/watch?v=jxReupv7UOo&ab_channel=Iv%C3%A1nAgudoD%C3%ADaz)
 
 the final result of the `lsblk` command should be :
-![Lsblk Bonus]()
+<img src="https://i.ibb.co/Fqbp8yn/image.png" width="450" >
 ## 2- Website
 ![Wordpress website](https://i.ibb.co/KW0qBsH/Screenshot-from-2024-12-26-11-22-43.png)
 
@@ -919,6 +919,7 @@ the final result of the `lsblk` command should be :
 + **PHP :** A server-side scripting language. When a request comes in, PHP process it and retrieves data from MariaDB and generate code that web server sends to the browse.r
   
 + **Wordpress :** Is a content management system. It simplifies website creation by providing pre-built template and plugins without needing to write much code..
+
 
 
 

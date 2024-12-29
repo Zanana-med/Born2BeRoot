@@ -1034,6 +1034,27 @@ Installing one of those packages automatically installs main `php` package as a 
 	<img src="https://i.ibb.co/R765KQG/Screenshot-from-2024-12-28-05-03-32.png" width="550">
 </p>
 
+### Wordpress Cnfiguration
+
+Wordpress looks for a file named `wp-config.php` inside the `/var/www/html` during its setup process, where we gonna specify the database name, user and password, etc. The `wp-config-sample.php` provided by Wordpress which contain basic structure to configure it connect to the database and operate correctly.  
+Renaming the file allows us to modify those information while keeping the original `wc-config-sample.php` as backup.
+
+The command : `cp wc-config-sample.php wc-config.php`
+
+Let's edit our database information of the `wc-config.php` 
+<p align="center">
+	<img src="https://i.ibb.co/0MQ0Xgh/Your-Database-Name.png" width="550">
+</p>
++ To improve performance and speed of the web application on the server we gonna enable `fastcgi` using the command `lighty-enable-mod fastcgi`
++ For speed and performance of PHP_based web applications `lighty-enable-mod fastcgi-php`
++ Forcing the update and apply the changes in the configurations using `service lighttpd force-reload`
+<p align="center">
+	<img src="https://i.ibb.co/b2tNQCy/vvev.png" width="550">
+</p>
+
+And now let's reboot the server and check the `localhost` on our host machine
+
+
 
 
 

@@ -945,16 +945,16 @@ We need to allow the port 80
 **But why we kept port 80 open?**  
 Lighttpd is a web server that needs to **listen** for incoming HTTP requests. When someone type a website URL (http://*** ) in the browser, their browser automatically tries to connect to **port 80** on the server. if the port is closed then the request won't reach the server.
 
-Now we need to configure the port forwarding for the port 80 also
+Now we need to configure the port forwarding for the HTTP Rule also
 <p align="center">
-	<img src="https://i.ibb.co/Zdx9S2P/Screenshot-from-2024-12-28-02-36-40.png" width="450">
+	<img src="https://i.ibb.co/b2mkV2w/7010.png" width="450">
 </p> 
 
 
 #### Install Wordpress
 
 To install the **latest** English version of Wordpress we must install **wget** and **zip**.  
-\- **wget :** Tool to download files from internet (in pur case to download Wordpress);
+\- **wget :** Tool to download files from internet (in our case to download Wordpress);  
 \- **zip :** Utility for compressing and decompressing files in ZIP format (in our case to unzip the wget zip of the Wordpress)
 <p align="center">
 	<img src="https://i.ibb.co/x65VBmV/Screenshot-from-2024-12-28-02-42-16.png" width="450">
@@ -1005,13 +1005,34 @@ Then just make those changes
 - Reload privilege tables now? → `Y`
 
 You get at the end this message 
-<center>
+<p align="center">
 	<img src="https://i.ibb.co/C5yYwnp/Screenshot-from-2024-12-28-03-46-56.png" width="550">
-</center>
+</p>
+
+Let's create the database and the user for the Wordpress, accessing mariadb using the command `mariadb`. 
++ To create the database : `CREATE DATABASE <DB_Name>;` ;
++ Create a User : `CREATE USER 'WordpressUser'@'localhost' IDENTIFIED BY '<password>';`
++ Giving the user all the privileges : `GRANT ALL PRIVILEGES ON <DB_Name>.* TO 'WordpressUser'@'localhost';`
++ Enforce MariaDB to reload the privileges to ensure the new user permissions applies immediately : `FLUSH PRIVILEGES;` 
++ `EXIT` : To exit and end the session with MariaDb server.
+<p align="center">
+	<img src="https://i.ibb.co/hWwYF6w/Uarntitled-design.png" width="600">
+</p>
+
+#### Install PHP
+
+We gonna need some packages 
++ **`php-cgi` :** Component of PHP that allows it to be executed as **Common Gateway Interface** program. This means PHP can process requests dynamically, generating content for a website based on logic and user inputs. Without `php-cgi` Lighttpd wouldn't know how to handle PHP code.
+
++ **`php-mysql` :** PHP extension that enables PHP scripts to interact with MySQL-compatible databases like MariaDB. Allow Wordpress communicate with the database to retrieve and update the information. Without `php-mysql` Wordpress would not be able to fetch data from MariaDB, rendering the site non-functional.
+
+Installing one of those packages automatically installs main `php` package as a dependency because they can't function without core PHP interpreter. 
 
 
-
-
+`apt install php-cgi php-mysql`
+<p align="center">
+	<img src="https://i.ibb.co/R765KQG/Screenshot-from-2024-12-28-05-03-32.png" width="550">
+</p>
 
 
 

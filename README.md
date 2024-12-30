@@ -12,7 +12,7 @@
 
 You wanna pass the 42 Born2BeRoot Project **DO YOU ??** 
 
-So we're going into the main PDF subject, and every time we find a keyword or any scary word that we don't face everyday ! We gonna take our time to understand it and know how to work with it. Part per Part of the PDF until we finish the whole project ✅
+So we're going into the main PDF subject, and every time we find a keyword or any scary word we don't face everyday! We gonna take our time to understand it and know how to work with it. Part per Part of the PDF until we finish the whole project ✅
 
 # <u>Let's start !</u>
 
@@ -29,9 +29,9 @@ So basically you can see a VM as a computer inside your computer.
 
 Imagine you have a computer with Windows operating system, one day you decide to start learning Linux! But you still wanna use your main computer which full of your personal data and software you use everyday .  
 
-Of course you need to practice not just wasting your time by just watching YouTube playlists or even paid courses.  
+Of course you need to practice not just wasting your time by watching YouTube playlists or even paid courses.  
 
-So now you should buy a new laptop so you can install the Linux operating system and start practice your knowledge.  
+So now you should buy a new laptop so you can install the Linux operating system and start practicing your knowledge.  
 **Isn't that just waste of your goddamn MONEY ??**  
 
 VM is here to help you !
@@ -63,7 +63,7 @@ The Hypervisor manage and allocate the portions of all the resources needed so t
 
 + **Virtual Ram :** When configuring a VM, you choose how much the hypervisor allocate of the physical memory to the guest OS from the host RAM, ensuring it wouldn't access the other host memory.
 
-+ **Virtual storage :** Hypervisor provide the number you want of GB as the guest hard disk from the host hard one, it create a large file on the host storage, this file act like its the Virtual storage of the guest OS.  (  `.vdi` file on VirtualBox).
++ **Virtual storage :** Hypervisor provide the storage for the guest from the physical hard disk, it create a file on the host storage, this file act like the storage of the guest OS.  (  `.vdi` file on VirtualBox).
 
 + **Virtualizing other resources :** the hypervisor also provide the other virtual resources as Gpu, Network adapter, Usb devices ... 
 
@@ -71,7 +71,7 @@ The Hypervisor manage and allocate the portions of all the resources needed so t
 
 1. **Type 1 :** ( Bare Metal Hypervisor) This type don't need an interaction with a host operating system, requires setup knowledge. It take all the resources it needs directly from the physical hardware, it is used mostly by the companies, servers, cloud computing ...  And not for personal uses or testing a new OS.
 
-2. **Type 2 :** ( Hosted Hypervisor ) This type of hypervisor is the one we gonna use on our project, it is easy to set up and great for personal uses or testing, it runs on top of a host OS as an application.
+2. **Type 2 :** ( Hosted Hypervisor ) This type of hypervisor is the one we gonna use on our project, it is easy to set up, great for personal uses and testing. It runs on top of a host OS as an application.
 
 <p align = "center">
 	<img  src = "https://i.ibb.co/R90SPtL/Untitled-design-1-1.png" width = "600">
@@ -89,9 +89,8 @@ The operating system interact directly with the hardware with the help of its ke
 
 **Kernel :** The core part of the operating system that interact directly with the hardware, acts as a bridge between the hardware and the rest of the operating system, enabling communication between the software and the hardware.  
 
->**How to communicate with the kernel ?**
-
-<u><b>System calls</b></u> : Are the primary interface between the user programs and the kernel, allow user applications to request services from the operating system such file access, process control or communication ... 
+**How to communicate with the kernel ?**  
+**System calls :** Are the primary interface between the user programs and the kernel, allow user applications to request services from the operating system such file access, process control or communication ... 
 
 <p align = "center">
 	<img src ="https://i.ibb.co/DVdJDbN/User-space-2.png" width = "450">
@@ -101,16 +100,16 @@ The operating system interact directly with the hardware with the help of its ke
 ### > Linux is not what you think it is !!!!!
 
 You think that Linux is an entire operating system where you run commands like `ls`, `cp`, `cat`, etc. Including shell command-lines and libraries such glibc for running programs.
-But you're completely wrong my friend! Because here you are talking about the GNU not the Linux.
+But you're completely **wrong** my friend! Because you are talking about the GNU not the Linux.
 
-Linux is the kernel, the core of the operating system, the entire OS is named GNU/Linux which combine the Linux kernel and the GNU Project tools and utilities
+Linux is the kernel, the core of the operating system, the entire OS is named **GNU/Linux** which combine the Linux kernel and the GNU Project tools and utilities.
 
 <p align = "center">
 	<img src = "https://i.ibb.co/3SGWjhB/9bygum.jpg" width = "250">
 </p>
 
 
-Before diving into the Debian, Rocky and the difference between them, we need to understand those two concepts :
+Before diving into Debian, Rocky and the difference between them. We need to understand those two concepts :
 
 1. **Linux distribution :**
  
@@ -120,12 +119,12 @@ Linux distribution is a complete operating system built around Linux kernel with
 
 Command-line or graphical tool to automate the process of installing, updating and removing software packages on Linux system, don't be scared by the word **package** you can see it as a normal software you wanna install, to install our package we need a package manager.
 
->On the next chapter we gonna give more time to APT and explain the package manager and how it works .
+>On the next chapter we gonna give more time to **APT** and explain the package manager and how it works .
 
 
 ### > Debian and Rocky
 
-+ **Debian** is a Linux distribution composed of **free** and open-source packages, comes with clean user interface not like the Windows OS fooled of news and ads, its update are well tested before releasing. The Debian distributions focus more on the stability, security and privacy of the user, also comes with the powerful package manager APT which help a lot for installing, upgrading or removing software on the system.
++ **Debian** is a Linux distribution composed of **free** and open-source packages, comes with clean user interface not like the Windows OS fooled of news and ads, Debian update are well tested before releasing. The Debian distributions focus more on the stability, security and privacy of the user, also comes with the powerful package manager APT which help a lot for installing, upgrading or removing software on the system.
 
 + **Rocky** is based on Red Hat Enterprise Linux (RHEL), which is a Linux distribution for the commercial market developed by the Red Hat, Rocky focus on enterprise-grade software. Good for servers, enterprise environment, cloud computing ... Not for a beginner with the Linux operating system.
 
@@ -159,11 +158,8 @@ When installing a package it depends to other packages to work, using **dpkg** y
 
 **APT** stand for Advanced Package Tool, released on 2014, a powerful package manager used by Debian-based Linux Distributions ( Ubuntu, Linux Mint, etc.). It simplifies the process to manage packages by automating tasks as resolving the dependencies and downloading packages from repositories.  
 
-Unlike `dpkg` you don't need to install the `.deb` file, just use the apt command plus the name of the software you wanna install. THAT'S IT !
-
-
-example : `apt install firefox`
-
+Unlike `dpkg` you don't need to install the `.deb` file, just use the apt command plus the name of the service you wanna install. **THAT'S IT !**  
+Example : `apt install firefox`
 
 The APT automatically install and update all the dependencies needed to install a package.
 
@@ -176,7 +172,7 @@ Apt is newer than Apt-Get, also the Apt is user-friendly interface and provide c
 
 **How APT works ?**
 
-Apt relied on a list of repositories which are storage location or someone's server with collection of software, we can check those repositories using the command `/etc/apt/sources.list` and for additional files in `/etc/apt/sources.list.d/`.
+APT relied on a list of repositories which are storage location or someone's server with collection of software, we can check those repositories using the command `/etc/apt/sources.list` and for additional files in `/etc/apt/sources.list.d/`.
 
 When requesting a package \` `apt install firefox` \`  the Apt checks which dependencies are needed to install the package and ensuring installing them if they not exist, then tha Apt download the `.deb` package file from the repository specified in `source.list`.
 
@@ -256,7 +252,20 @@ The Linux file system is a structured way to organize and manage data on device 
 + `/tmp` : Temporary storage for files used by programs during runtime, all those files are clearer after reboot.
 ## > Booting
 
-### // Todo
+Computers use **firmware** to initialize hardware, firmware is a small program stored inside a ship on the motherboard. When we start the computer it's the first program the computer runs, it preforms three tasks :  
++ **Initialize all hardware devices :** It checks if all hardware are functional, this process know as **POST** (**P**ower **O**n **S**elf **T**est), if everything is alright it pass to the next step. If not it stops the startup o the machine.
+  
++ **Find the Bootloader program :**  We can store the bootloader in any external storage device as a Hard Disk, USB, CD, DVD, etc. Firmware looks for the bootloader in a sequence until it find it, starting from the Hard disk, if the bootloader is found then the firmware stop looking and start executing the bootloader, if not it checks the USB then the CD. If the bootloader is not found then firmware stops the startup.  
+	There is two types of firmware :  
+	+ **BIOS :**  Support maximum partition size of 2TB, and support up to 14 partitions, 3 primary and 1 extended (11 logical max inside the extended). Looks for the bootloader just in the first 512 bytes of every storage device until it find it. This first small section is the **MBR** which store the bpptloader and partition information . 
+	+ **UEFI :** Support up to 128 partitions and a maximum of partition size up to  18 EB (Exabyte) .It find the bootloader after the first sector, it reads 4Kb after skipping the first 512 bytes of MBR, this sector of 4Kb named **GPT**, which also store the bootloader and partition information
+
++ **Execute the Bootloader .**
+
+<p align="center">
+<img src="https://i.ibb.co/hZkbqZn/maxresdefault.jpg" width="450">
+</p>
+
 
 ## > Partitions
 

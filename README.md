@@ -256,7 +256,7 @@ The Linux file system is a structured way to organize and manage data on device 
 + `/tmp` : Temporary storage for files used by programs during runtime, all those files are clearer after reboot.
 ## > Booting
 
-### // To do
+### // Todo
 
 ## > Partitions
 
@@ -563,7 +563,7 @@ Now let's check again the `ss -tunlp` :
 **THE PROCESS IS KILLED SUCCESSFULLY!**
 
 ->The best thing you can do now remove the ufw and reinstall it again, if the port 68 still exist just delete it using the `ufw delete X` command (`X` is the line number of the port 68.  
-//TODO : When configuring again capture this ufw delete step!
+
 
 Let's remove completely the **ufw** service :
 <p align="center">
@@ -1054,15 +1054,67 @@ Let's edit our database information of the `wc-config.php`
 
 And now let's reboot the server and check the `localhost` on our host machine
 
+//TODO : Screenshot of the wordpress and the steps
+
+
+Congratulation buddy you set up your own website. This is all what the subject asks, just to set up a Wordpress website using our tools. 
+
+Some enhancement to your website if like to :)
+![](https://i.ibb.co/FY5LVX8/Screenshot-from-2024-12-29-12-37-18.png)
 
 
 
+## 3- Service
+
+You can choose any service you think it gonna help you in the future, in my case I take a file sharing service named **Samba** that work with the **SMB** protocol listening on the **port 445** for TCP. With Samba you can share files between any two operating systems without giving them all the access to your machine like **SSH** does.  
+Basically you create a directory and the client could see just the files on that directory, also it is a file sharing so it means also the client can add files or directories inside the original one and it display on server at the same time.
+
+Am gonna use another VM as the client instead of my host OS. For this service to work you need to install  **smbclient** on client machine. We gonna need **sudo** privileges to install it. That's why using new **VM** ! (Of course Port Forwarding gonna help us)
+#### Server side 
+
+Let's update first the package manager : `apt update`
+
+picture //TODO  ![apt update]( )
+
+Then installing the samba service :  `apt install samba`
+//todo ![apt install samba]( )
+
+We gonna create the directory we wanna use inside a directory named `samba` which should be itself inside the `/srv` folder. Use the `-p` flag with `mkdir` to create them all directly and give our folder all the permissions  : `mkdir -p /srv/samba/share && chmod 777 /srv/samba/share`
+
+Open the **Samba** configuration file `vim /etc/samba/smb.conf` and add the following configuration to the end of the file :  
+```bash
+	[share]
+	path = /srv/samba/share
+	browseable = yes
+	read only = no
+	guest ok = yes
+```
+
+- `path` specifies the folder to share.
+- `browseable` makes the share visible in file browsers.
+- `read only` set to `no` allows write access.
+- `guest ok` enables access without authentication.
+
+//TODO  ![Screenshot of the service rules]( )
+
+Let's restart the service to apply changes  
+`systemctl rstart smbd`
+
+#### Port Forwarding
+
+The service listen to port 445, so we need first to allow the firewall to accept those types of requests and then set up port forwarding for this port. I choose `1070`, you can choose another number just make sure its unused.
+
+//todo ![ufw allow 445]( )
+<p align="center">
+	<img src="https://i.ibb.co/6890nRB/Screenshot-from-2024-12-29-13-18-03.png" width="420">
+</p>
 
 
+#### Client side
 
+Let's install the **smbclient** using `apt install smbclient`.
+![apt install smbclient]( )
 
-
-
-
+Now just create a folder to mount it to the directory where the data gonna received y the 
 
 <h4 align="center"><b>Repo Viewers</b><br><img src="https://profile-counter.glitch.me/zanana-med-Born2BeRoot/count.svg"></h4>

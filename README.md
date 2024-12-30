@@ -698,7 +698,7 @@ Simply by using the command `sudoreplay /var/log/sudo/00/00/0x`, and the x is th
 What is a **script** ?  
 Script is a file containing a sequence of commands or instructions written in a scripting language (bash in our case). The script help to automate tasks, configure systems or interact with applications and OS.
 
-#### 1. Architecture
+### 1. Architecture
 
 OS architecture refers to the structure of the computer's processor and the operating system that runs on it, of course details about the kernel. 
 
@@ -706,7 +706,7 @@ OS architecture refers to the structure of the computer's processor and the oper
  
 ![uname -a](https://i.ibb.co/dQDvZq9/Screenshot-from-2024-12-22-09-32-42.png)
 
-#### 2. Physical Processor
+### 2. Physical Processor
 
 **CPU, core and thread ?**
 + **CPU :** The brain of the computer, CPU which execute programs and handles data by performing operations as addition, comparison, etc;
@@ -724,7 +724,7 @@ OS architecture refers to the structure of the computer's processor and the oper
 	<img src="https://i.ibb.co/By3fnHf/Screenshot-from-2024-12-23-15-53-40.png" >
 </p>
 
-#### 3. Virtual Processor
+### 3. Virtual Processor
 
 Virtual Processor is a logical representation of a CPU core that is presented to a virtual machine by the hypervisor. The hypervisor create vCPUs for the VMs and translate their instructions into operations on the host CPU.  
 When you configure 10 vCPUs in a VM, the hypervisor assign 10 **threads** from the physical hardware to the VM. So each vCPU corresponds to a **thread** on the host's physical CPU.
@@ -732,7 +732,7 @@ When you configure 10 vCPUs in a VM, the hypervisor assign 10 **threads** from t
 	<img src="https://i.ibb.co/sv4MCW3/Screenshot-from-2024-12-23-15-54-52.png" >
 </p>
 
-#### 4. Memory Usage (RAM)
+### 4. Memory Usage (RAM)
 
 Let's give a look to the **awk** :  
 **awk** is a powerful text-processing tool operate line by line that allow you to manipulate and analyse text data in a flexible way.  
@@ -759,7 +759,7 @@ Command for the **RAM utilization rate** as percentage :   So we gonna use the a
 	<img src="https://i.ibb.co/x2rKb9Z/Untitlerrrrrrrrrd-design.png" >
 </p>
 
-#### 5. Disk Usage
+### 5. Disk Usage
 
 `df` command, also known as the disk free. Contain information about the file system disk space usage on the mounted file system.
 <p align="center">
@@ -776,7 +776,7 @@ For the disk utilization rate we divide the available disk to the total disk sto
 	<img src="https://i.ibb.co/7QYKjMF/Screenshot-from-2024-12-24-10-13-25.png" >
 </p>
 
-#### 6. CPU load
+### 6. CPU load
 
 The command we will use is `top`, which is used to display Linux processes. It provides a dynamic, real-time view of the running system.  
 `top -bn1 | grep Cpu`:
@@ -798,7 +798,7 @@ The final command: `top -bn1 | grep Cpu | awk '{gsub(",", " "); print 100-$8}'`
 Why `100-$8`?  
 The `$8` field represents the idle CPU time, which is the percentage of time the CPU spends doing nothing (unused percentage). By subtracting `$8` from 100, we calculate the percentage of CPU being actively used on the server.
 
-#### 7. Last boot
+### 7. Last boot
 
 To get the date and time of the last reboot we gonna use the `who` command .
 <p align="center">
@@ -810,7 +810,7 @@ The final command : `who -b | awk '{print $3 " " $4}'`
 	<img src="https://i.ibb.co/CJv9F14/Uregrntitled-design.png" width="500">
 </p>
 
-#### 8. LVM use
+### 8. LVM use
 
 ![lvm command](https://i.ibb.co/Rv2bxNw/Screenshot-from-2024-12-25-17-45-53.png)
 
@@ -818,7 +818,7 @@ The final command : `who -b | awk '{print $3 " " $4}'`
 + `&& --A-- || --B--` This command check if the command `grep -g lvm` return  `1` then it applies the `A` part, otherwise it applies the `B` part.  
 So the final command is : `lsblk | grep -q && echo "yes" || echo "no"`  
 
-#### 9. Connections TCP
+### 9. Connections TCP
 
 To check the active connection, we mean we gonna find out how much Established connection used by TCP.  
 `ss` command stand for `socket statistics` used to display the network statistics .
@@ -828,7 +828,7 @@ The final command : `ss -ta | grep ESTAB | wc -l`
 
 ![TCP connections](https://i.ibb.co/ry3s2J8/aeveva.png)
 
-#### 10. Users number
+### 10. Users number
 
 We have to get the number of the users currently using the server.
 
@@ -844,7 +844,7 @@ After connecting `mzanana`
 
 The final command is : `users | wc -w`
 
-#### 11. Network
+### 11. Network
 
 Let's get the IP and the MAC of the server.  
 IP command : `hostname -I`   
@@ -853,7 +853,7 @@ MAC command : `ip link | grep ether | awk '{print $2}'`
 	<img src="https://i.ibb.co/58Lft6G/Ip-Adr.png" width="550">
 </p>
 
-#### 12. Sudo
+### 12. Sudo
 
 ![Sudo logs](https://i.ibb.co/59kfPXp/Screenshot-from-2024-12-25-21-48-18.png)
 
@@ -861,25 +861,25 @@ The command : `journalctl _COMM=sudo | grep COMMAND | wc -l`
 + `journalctl` includes **all attempts** to use `sudo` (whether successful or not).
 + `grep COMMAND` ensure to count just the executed `sudo` commands, not failed attempts. 
 
-## The final script / Cron
+# The final script / Cron
 
 ![](https://i.ibb.co/bmFX34K/Screenshot-from-2024-12-25-22-01-19.png)
 
 ![](https://i.ibb.co/5YwQQLV/Screenshot-from-2024-12-25-22-03-30.png)
 
 
-#### wall
+## wall
 
 **wall** command in Linux  system used to display a message to all the users of the server.  
 To remove the header : `wall -n "Please update the service X!"`  
 In our case we gonna use the **wall** command inside a script which gonna applied by the cron. **But what is CRON ?**  
 
-#### Final script
+## Final script
 
 We're gonna create the script `monitoring.sh` on `/root`  (choose any directory you want)
 ![The final script](https://i.ibb.co/CV90X86/codeimage-snfippet-27.png)
 
-#### Cron 
+## Cron 
 
 If you want a job or work to be scheduled on your **Linux OS**, the **crontab** command will be a popular one.  
 + **cron** is the name of the tool;
@@ -931,7 +931,7 @@ The final result of the `lsblk` command should be :
 + **Wordpress :** Content management system. It simplifies website creation by providing pre-built template and plugins without needing to write much code..
 
 
-#### Install Lighttpd
+### Install Lighttpd
 
 Before installing the service let's be sure to have the latest updates of the apt package manager.
 <p align="center">
@@ -960,7 +960,7 @@ Now we need to configure the port forwarding for the HTTP Rule also
 </p> 
 
 
-#### Install Wordpress
+### Install Wordpress
 
 To install the **latest** English version of Wordpress we must install **wget** and **zip**.  
 \- **wget :** Tool to download files from internet (in our case to download Wordpress);  
@@ -991,7 +991,7 @@ We need to pass now by 3 steps :
 	<img src="https://i.ibb.co/4RjGtg6/Screenshot-from-2024-12-28-03-03-50.png" width="400">
 </p> 
 
-#### Install MariaDB
+### Install MariaDB
 
 `apt install mariadb-server` 
 <p align="center">
@@ -1028,7 +1028,7 @@ Let's create the database and the user for the Wordpress, accessing mariadb usin
 	<img src="https://i.ibb.co/hWwYF6w/Uarntitled-design.png" width="600">
 </p>
 
-#### Install PHP
+### Install PHP
 
 We gonna need some packages 
 + **`php-cgi` :** Component of PHP that allows it to be executed as **Common Gateway Interface** program. This means PHP can process requests dynamically, generating content for a website based on logic and user inputs. Without `php-cgi` Lighttpd wouldn't know how to handle PHP code.
@@ -1079,7 +1079,7 @@ You can choose any service you think it gonna help you in the future, in my case
 Basically you create a directory and the client could see just the files on that directory, also it is a file sharing so it means also the client can add files or directories inside the original one and it display on server at the same time.
 
 Am gonna use another VM as the client instead of my host OS. For this service to work you need to install  **smbclient** on client machine. We gonna need **sudo** privileges to install it. That's why using new **VM** ! (Of course Port Forwarding gonna help us)
-#### Server side 
+### Server side 
 
 Let's update first the package manager : `apt update`
 
@@ -1109,7 +1109,7 @@ Open the **Samba** configuration file `vim /etc/samba/smb.conf` and add the foll
 Let's restart the service to apply changes  
 `systemctl rstart smbd`
 
-#### Port Forwarding
+### Port Forwarding
 
 The service listen to port 445, so we need first to allow the firewall to accept those types of requests and then set up port forwarding for this port. I choose `1070`, you can choose another number just make sure its unused.
 
@@ -1119,7 +1119,7 @@ The service listen to port 445, so we need first to allow the firewall to accept
 </p>
 
 
-#### Client side
+### Client side
 
 Let's install the **smbclient** using `apt install smbclient`.
 ![apt install smbclient]( )

@@ -1151,6 +1151,55 @@ The service listen to port 445, so we need first to allow the firewall to accept
 	<img src="https://i.ibb.co/GHdFdrs/image.png" width="420">
 </p>
 
+### Client side
+
+Let's install the `smbclient` and `cifs-utils` to help us mount the directory on client .
+<p align="center">
+	<img src="https://i.ibb.co/KLQPtPv/Screenshot-from-2024-12-31-08-32-14.png" width="420">
+</p>
+<p align="center">
+	<img src="https://i.ibb.co/4sWzP7W/Screenshot-from-2024-12-31-08-33-57.png" width="420">
+</p>
+
+Now we will create a directory where the Samba will be mounted and linked to a  Filesystem.  
+Making sure that **both the client and server have full read, write, and execute permissions** for files and directories created in the shared folder, no matter which side creates them.  
+#### Server Configuration
+
+**1- Set Up the Samba Share** `/etc/samba/smb.conf` 
+<p align="center">
+	<img src="https://i.ibb.co/qNgx4Mg/Screenshot-from-2024-12-31-13-12-14.png" width="250">
+</p>
+- **`force user` and `force group` :** Ensures files are owned by `nobody:nogroup`.
+- **`create mask`:** Sets full permissions (read, write, execute) for files.
+- **`directory mask`:** Sets full permissions (read, write, execute) for directories.
+
+Restart the service `systemctl restart smbd`  
+
+**2- Set Permissions on the Shared Folder**  
+```
+	sudo chmod -R 777 /srv/samba/share
+	sudo chown -R nobody:nogroup /srv/samba/share
+```
+**3- Enable ACL for Default Permissions**
+We need to in install first **acl** the feature that set permissions for file and directories.   \
+```
+	sudo setfacl -R -m d:u:nobody:rwx /srv/samba/share
+	sudo setfacl -R -m d:g:nogroup:rwx /srv/samba/share
+```
+`-R` Applies the rules recursively to all files and subdirectories;
+`-m` stand for modify;
+  `d` default.
+
+#### Client Configuration
+
+Mount the Samba Share on the client with proper ownership mapping:
+`sudo mount -t cifs //10.0.2.2/share ~/client_samba -o port=1474,file_mode=0777,dir_mode=0777`  
+
+
+By default, Samba shares mounted using the `mount` command are **not persistent**, meaning the share will be unmounted when the client machine is restarted. To ensure the Samba share is automatically remounted after a reboot, you need to configure it in the `/etc/fstab` file.
+<p align="center">
+	<img src="https://i.ibb.co/cYR3MXp/image.png">
+</p>
 
 
 

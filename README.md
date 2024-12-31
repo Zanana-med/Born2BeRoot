@@ -905,6 +905,7 @@ At the bottom of the file you gonna find the next highlighted line
 You can visualize the process using the link of this tool [crontab.guru](https://crontab.guru/)  
 Example from the [Website](https://crontab.guru/)
 <p align = "center"><img src= "https://i.ibb.co/RQSmKQJ/image.png" width ="400"></p>
+
 # ARE YOU DUMB !!
 
 <p align="center">

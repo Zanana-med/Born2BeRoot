@@ -1112,6 +1112,39 @@ Basically you share a directory and the client gonna see just the files on that 
 
 Am gonna use another VM as the client instead of my host OS. For this service to work you need to install  **smbclient** on client machine. We gonna need **sudo** privileges to install it. That's why using new **VM** ! (Of course Port Forwarding gonna help us)
 
+### Server side 
+
+Let's update first the package manager : `apt update`. Then installing the samba service :  `apt install samba`  
+<p align="center">
+	<img src="https://i.ibb.co/DQp51p4/image.png" width="400">
+</p>
+
+
+We gonna create the directory `/srv/samba` and the folder to share with the client, lets name it `/srv/samba/share` .  
+Use the `-p` flag with `mkdir` to create them all directly, and give our folder all the permissions  : `mkdir -p /srv/samba/share && chmod 777 /srv/samba/share`
+
+Open the **Samba** configuration file `vim /etc/samba/smb.conf` and add the following configuration to the end of the file :  
+```bash
+	[share]
+	path = /srv/samba/share
+	browseable = yes
+	read only = no
+	guest ok = yes
+```
+
+- `path` specifies the folder to share.
+- `browseable` makes the share visible in file browsers.
+- `read only` set to `no` allows write access.
+- `guest ok` enables access without authentication.
+
+<p align="center">
+	<img src="https://i.ibb.co/w6n4R4r/image.png" width="300">
+</p>
+
+Let's restart the service to apply changes  
+`systemctl restart smbd`
+
+
 
 
 

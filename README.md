@@ -909,7 +909,7 @@ Example from the [Website](https://crontab.guru/)
 # ARE YOU DUMB !!
 
 <p align="center">
-	<img src="https://i.ibb.co/xDggSQp/Untitled-defbssign.png" width="540">
+	<img src="https://i.ibb.co/kXXvZQ8/Untitled-tgstrhwndesign.png" width="540">
 </p>
 
 Please if you can understand English a little bit you gonna notice that they asked us to run the script every 10 minutes **FROM THE SERVER STARTS UP** not when **YOU LOGGED IN**  

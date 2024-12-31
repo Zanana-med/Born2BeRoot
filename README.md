@@ -1144,6 +1144,13 @@ Open the **Samba** configuration file `vim /etc/samba/smb.conf` and add the foll
 Let's restart the service to apply changes  
 `systemctl restart smbd`
 
+### Port Forwarding
+
+The service listen to port 445, so we need first to allow the firewall to accept those types of requests and then set up port forwarding for this port. I choose `1070`, you can choose any another port (just make sure its unused).
+<p align="center">
+	<img src="https://i.ibb.co/GHdFdrs/image.png" width="420">
+</p>
+
 
 
 

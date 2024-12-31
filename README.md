@@ -255,10 +255,11 @@ The Linux file system is a structured way to organize and manage data on device 
 Computers use **firmware** to initialize hardware, firmware is a small program stored inside a ship on the motherboard. When we start the computer it's the first program the computer runs, it preforms three tasks :  
 + **Initialize all hardware devices :** It checks if all hardware are functional, this process know as **POST** (**P**ower **O**n **S**elf **T**est), if everything is alright it pass to the next step. If not it stops the startup o the machine.
   
-+ **Find the Bootloader program :**  We can store the bootloader in any external storage device as a Hard Disk, USB, CD, DVD, etc. Firmware looks for the bootloader in a sequence until it find it, starting from the Hard disk, if the bootloader is found then the firmware stop looking and start executing the bootloader, if not it checks the USB then the CD. If the bootloader is not found then firmware stops the startup.  
-	There is two types of firmware :  
-	+ **BIOS :**  Support maximum partition size of 2TB, and support up to 14 partitions, 3 primary and 1 extended (11 logical max inside the extended). Looks for the bootloader just in the first 512 bytes of every storage device until it find it. This first small section is the **MBR** which store the bpptloader and partition information . 
-	+ **UEFI :** Support up to 128 partitions and a maximum of partition size up to  18 EB (Exabyte) .It find the bootloader after the first sector, it reads 4Kb after skipping the first 512 bytes of MBR, this sector of 4Kb named **GPT**, which also store the bootloader and partition information
++ **Find the Bootloader program :**  We can store the bootloader in any external storage device as a Hard Disk, USB, CD, DVD, etc. Firmware looks for the bootloader in sequence until it find it, starting from the Hard disk, if the bootloader is found then the firmware stop looking and start executing the bootloader, if not it checks the USB then the CD. If the bootloader is not found then firmware stops the startup.  
+	There is two types of **firmware :**    
+	+ **BIOS :**  BIOS Looks for the bootloader just in the first 512 bytes of every storage device until it find it. This first small section is the **MBR** which store the bootloader and partition information. Support maximum partition size of 2TB, and support up to 14 partitions, 3 primary and 1 extended (11 logical max inside the extended). 
+	  
+	+ **UEFI :** It find the bootloader after the first sector, it reads 4Kb after skipping the first 512 bytes of MBR, this sector of 4Kb named **GPT**, which also store the bootloader and partition information. Support up to 128 partitions and a maximum of partition size up to  18 EB (Exabyte) .
 
 + **Execute the Bootloader .**
 
@@ -294,7 +295,7 @@ For example you plug-in the USB and you don't mount it to a filesystem you won't
 
  [The Best YouTube Video To Understand The Configuration of a LVM Using Terminal](https://www.youtube.com/watch?v=214rUhQe7B4&t=98s&ab_channel=DorianDotSlash)
 
-LVM is short of Logical Volume Manager, allow the creation of **Groups** of disks or partitions that can be assembled into a single (or multiple) filesystems.  
+LVM is short of Logical Volume Manager, allow the creation of **Groups** of disks or partitions that can be assembled into a single (or multiple) filesystem.  
 Can be used nearly for every mount point **EXCEPT** `/boot`, because GRUB cannot read from LVM metadata.
 
 Why LVM and not standard partitions ?  
@@ -320,14 +321,14 @@ So this picture provide us how the LVM is structured on the Linux system :
 - **Logical Volumes :** You can see it as the Partition on the standard way, they are created by allocating space from the VG using the command `lvcreate -L <size> -n <LV name> <VG name>` the `n` flag for naming the Logical Volume. To extend an existing LV if more space needed use the command`lvextend -L <+NewSize> <LV_Path>`.  
   **Examples :**
 	+ To create : `lvcreate -L 20G data datavg`
-		+ Resault ---> New LV named data created on /dev/datavg/data with the size of 20GB
+		+ Resault ---> New LV named `data` created on `/dev/datavg/data` with the size of 20GB
 	+ To extend : `lvextend -L +5G /dev/datavg/data`
 		+ Resault ---> The `data` LV resized to 25GB  
 	
 	The `-l` flag for getting the free space from the VG by percentage, `lvextend -l 50% /dev/datavg/data` extend for us the data LV by adding 50% of the VG free space .
 
 + **File Systems :** used to organize, store and manage files and directories on the Logical Volume making it accessible by the operating system.  
-  Before attaching Logical Volume to a specific path, we need first to pass by a necessary step which is formatting the Logical Volume, creating a Logical Volume doesn't automatically prepare it to store files, it must be formatted to a filesystem structure like **ext4** which stand for the fourth extended filesystems. 
+  Before attaching Logical Volume to a specific path, we need first to pass by a necessary step which is formatting the Logical Volume, creating a Logical Volume doesn't automatically prepare it to store files, it must be formatted to a filesystem structure like **ext4** which stand for the fourth extended filesystem. 
 
 #  Configuration of the VM
 
@@ -526,6 +527,7 @@ UFW is a simplified front-end for managing firewall rules in Linux systems. By d
 <p align="center">
 	<img src="https://i.ibb.co/phwn4XN/Untitled-deffsign.png" width="500">
 </p>
+
 #### IF You planned to Do the BONUS jump the next part !
 
 If you gonna do just the Mandatory part you need to kill the process running on port 68 as asked on the subject 
@@ -650,7 +652,7 @@ The explanation of each option :
 🟡 `maxrepeat = 3`       : Can't type the same character four times following each other. `mzaaaanana` is not valid!  
 🟣 `reject_username`   : The username shouldn't exist on the password;  
 ⚫ `enforce_for_root` : Those policies are applied also for the `root` user;  
-🟠 `difok = 7`              : The `difok` option stand for `DIFference OK`, the system make a character by character comparison between the old  and new passwords, starting with `difok = 0`. Each time characters in the same position are differ, `difok` value incremented by `1`. Once the comparison reaches the end of either password, if `difok >= 7` then the new password is valid, otherwise an error message is displayed.   
+🟠 `difok = 7`              : The `difok` option stand for `DIFference OK`, the system make a character by character comparison between the old and new passwords, starting with `difok = 0`. Each time characters in the same position are differ, `difok` value incremented by `1`. Once the comparison reaches the end of either password, if `difok >= 7` then the new password is valid, otherwise an error message is displayed.   
 
 
 **Those policies are applied for the new users, to change the current password of the `root` and `mzanana` users just use the `passwd` command**
@@ -744,7 +746,7 @@ Basic Syntax : `awk 'pattern { action }' file`
 
 **awk** fields and records :  
 + `Record` in awk is a line of text;
-+ `Field` is a column within a record deliminer by space or tab;
++ `Field` is a column within a record delimited by space or tab;
 + `$1`, `$2`, ..., `$NF` represent the first, second, ..., and last field in a line;
 + `$0` represents the entire line.
 
@@ -872,13 +874,15 @@ The command : `journalctl _COMM=sudo | grep COMMAND | wc -l`
 
 **wall** command in Linux  system used to display a message to all the users of the server.  
 To remove the header : `wall -n "Please update the service X!"`  
-In our case we gonna use the **wall** command inside a script which gonna applied by the cron. **But what is CRON ?**  
 
 ## Final script
 
 We're gonna create the script `monitoring.sh` on `/root`  (choose any directory you want)
-![The final script](https://i.ibb.co/CV90X86/codeimage-snfippet-27.png)
+![The final script](https://i.ibb.co/zNhbB6z/codeimage-snippet-31.png)
 
+AM GONNA EXPLAIN THE `if` STATEMENT SOONER !
+
+In our case we gonna use the **wall** command inside a script which gonna applied by the cron. **But what is CRON ?**  
 ## Cron 
 
 If you want a job or work to be scheduled on your **Linux OS**, the **crontab** command will be a popular one.  
@@ -889,20 +893,41 @@ If you want a job or work to be scheduled on your **Linux OS**, the **crontab** 
 
 `crontab -e` to edit the crontab  file 
 
-They ask us on the subject to schedule the script every 10 minutes from **server startup**
+At the bottom of the file you gonna find the next highlighted line
+![crontab file](https://i.ibb.co/xLsBDX8/Uncacvtitled-design.png)
+
+`m` : Specifies the minute when the command will run, ranges 0 => 59;  
+`h` : Which hour of the day the command gonna schedule to execute, ranges 0 => 23;  
+`dom` : Day Of Month, range 1 => 31  
+`mon` : Month, range 1 => 12  
+`dow` : Day Of Week range 0 => 7 (0 and 7 represent sunday)  
+
+You can visualize the process using the link of this tool [crontab.guru](https://crontab.guru/)  
+Example from the [Website](https://crontab.guru/)
+<p align = "center"><img src= "https://i.ibb.co/RQSmKQJ/image.png" width ="400"></p>
+# ARE YOU DUMB !!
+
+<p align="center">
+	<img src="https://i.ibb.co/xDggSQp/Untitled-defbssign.png" width="550">
+</p>
+
+Please if you can understand English a little bit you gonna notice that they asked us to run the script every 10 minutes **FROM THE SERVER STARTS UP** not when **YOU LOGGED IN**  
 
 ![at startup](https://i.ibb.co/JdkGv4P/Screenshot-from-2024-12-26-01-41-32.png)
 
-In our case we gonna use a loop inside the script which execute the script every 10 minutes (600 second). Here is a template : `while true; do ... sleep 600 done` 
-The script gonna be
-![](https://i.ibb.co/31scDLL/codeimage-snippet-27.png)
+So please don't tell me you gonna do like all your peers with the bad miss-understanding  subject and do the `*/10 * * * * /PathToScript/monitoring.sh
+ 
+### We. THE LEGENDS! Gonna use 
+ <p align = "center"><img src= "https://i.ibb.co/DDfFwkm/Screenshot-from-2024-12-31-05-41-23.png" width ="400"></p>
 
-On the crontab file we gonna add the command `@reboot /PathToScript/monitoring.sh &`  
-+ `@reboot` Ensure the command start every time the system boots;
-+ `&` At the end of the line ensuring that the script runs on background to not disturb another process, so you still use your terminal or another processes while the script continues to run.
-<p align ="center">
-   <img src="https://i.ibb.co/s25mdDK/Screenshot-from-2024-12-26-10-40-00.png" width ="350">
-</p>
+BUT WAIT !! WHY EVERY MINUTES ??? DIDN'T THEY REQUIRE US TO DISPLAY IT EVERY **10  MINUTES ???**   
+Relax Buddy!!
+
+Remember when I told you earlier that am gonna explain you the `if` statement.   
+NOW IT'S THE TIME.  
+The `/proc/uptime` give us the exact seconds when the **server start**. We convert the second into minutes using `int($1/60)` and we check the modulo of the result by 10 `$((Helper % 10))` , if the modulo equals 0, that's mean 10 minutes is passed from the server starts. **AND THAT'S WHAT THEY ASK US EXACTLY.**
+
+
 
 The Final Results : 
 

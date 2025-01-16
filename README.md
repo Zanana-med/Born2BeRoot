@@ -10,7 +10,9 @@
 
 >**YOU ARE NOT HERE *ONLY* FOR THE CONFIGURATION OF THE VIRTUAL MACHINE, IF THAT'S WHAT YOU WANT! DON'T READ THIS MASTERPIECE WHICH FULL OF KNOWLEDGE AND INFORMATION, GO WATCH A 10 MIN YOUTUBE VIDEO hhh (shame on you buddy)** 
 
-You wanna pass the 42 Born2BeRoot Project **DO YOU ??** 
+### You wanna pass the 42 Born2BeRoot Project  **DO YOU ??** 
+
+![125 score](https://i.ibb.co/rxKb10c/image.png)
 
 So we're going into the main PDF subject, and every time we find a keyword or any scary word we don't face everyday! We gonna take our time to understand it and know how to work with it. Part per Part of the PDF until we finish the whole project ✅
 
@@ -916,7 +918,7 @@ Please if you can understand English a little bit you gonna notice that they ask
 
 ![at startup](https://i.ibb.co/JdkGv4P/Screenshot-from-2024-12-26-01-41-32.png)
 
-So please don't tell me you gonna do like all your peers with the bad miss-understanding  subject and do the `*/10 * * * * /PathToScript/monitoring.sh
+So please don't tell me you gonna do like all your peers with the bad miss-understanding  subject and do the `*/10 * * * * /PathToScript/monitoring.sh`
  
 ### We. THE LEGENDS! Gonna use 
  <p align = "center"><img src= "https://i.ibb.co/DDfFwkm/Screenshot-from-2024-12-31-05-41-23.png" width ="400"></p>
@@ -924,7 +926,7 @@ So please don't tell me you gonna do like all your peers with the bad miss-under
 BUT WAIT !! WHY EVERY MINUTES ??? DIDN'T THEY REQUIRE US TO DISPLAY IT EVERY **10  MINUTES ???**   
 Relax Buddy!!
 
-Remember when I told you earlier that am gonna explain you the `if` statement.   
+Remember when I told you earlier that am gonna explain you the `if` statement!   
 NOW IT'S THE TIME.  
 The `/proc/uptime` give us the exact seconds when the **server start**. We convert the second into minutes using `int($1/60)` and we check the modulo of the result by 10 `$((Helper % 10))` , if the modulo equals 0, that's mean 10 minutes is passed from the server starts. **AND THAT'S WHAT THEY ASK US EXACTLY.**
 

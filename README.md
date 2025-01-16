@@ -11,8 +11,9 @@
 >**YOU ARE NOT HERE *ONLY* FOR THE CONFIGURATION OF THE VIRTUAL MACHINE, IF THAT'S WHAT YOU WANT! DON'T READ THIS MASTERPIECE WHICH FULL OF KNOWLEDGE AND INFORMATION, GO WATCH A 10 MIN YOUTUBE VIDEO hhh (shame on you buddy)** 
 
 ### You wanna pass the 42 Born2BeRoot Project  **DO YOU ??** 
-
-![125 score](https://i.ibb.co/rxKb10c/image.png)
+<p  align = "center" >
+	<img src = "https://i.ibb.co/rxKb10c/image.png" width="500">
+</p>
 
 So we're going into the main PDF subject, and every time we find a keyword or any scary word we don't face everyday! We gonna take our time to understand it and know how to work with it. Part per Part of the PDF until we finish the whole project ✅
 
